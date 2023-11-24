@@ -1,0 +1,1399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>BattleLore ArmyGenerator</title>
+    <link rel="stylesheet" type="text/css" href="inc/styles.css">
+    <script src="inc/MooTools-Core-1.6.0.js"></script>
+    <script src="inc/MooTools-More-1.6.0.js"></script>
+    <script>
+        window.addEvent('load', function() {
+            $$('.btn').each(function(el) {
+                el.setStyle('opacity', '0.8')
+                
+            });
+            $$('.btn').addEvents({
+                mouseenter: function(el) {
+                    this.setStyle('opacity', '1');
+                },
+                mouseleave: function(el) {
+                    this.setStyle('opacity', '0.8');
+                }
+            });
+
+            $('genBTN').addEvents({
+                click: function() {
+                    $('daqan_cards').empty();
+                    $('uthuk_cards').empty();
+                    $('undead_cards').empty();
+                    if ($('nbcards').value) {
+                        for (j = 0; j < $('nbcards').value; j++) {
+                            $('list').empty();
+                            daqan();
+                            $('list').empty();
+                            uthuk();
+                            $('list').empty();
+                            undead();
+                        }
+                    } else {
+                        $('list').empty();
+                        daqan();
+                        $('list').empty();
+                        uthuk();
+                        $('list').empty();
+                        undead();
+                    }
+                    //document.body.setStyle('background-image','url(img/bg_daqan.jpg)');
+                }
+            });
+
+            $('daqanBTN').addEvents({
+                click: function() {
+                    $('daqan_cards').empty();
+                    if ($('nbcards').value) {
+                        for (j = 0; j < $('nbcards').value; j++) {
+                            $('list').empty();
+                            daqan();
+                            
+                        }
+                    } else {
+                        $('list').empty();
+                        daqan();
+                    }
+                    //document.body.setStyle('background-image','url(img/bg_daqan.jpg)');
+                }
+            });
+
+            $('uthukBTN').addEvents({
+                click: function() {
+                    $('uthuk_cards').empty();
+                    if ($('nbcards').value) {
+                        for (j = 0; j < $('nbcards').value; j++) {
+                            $('list').empty();
+                            uthuk();
+                        }
+                    } else {
+                        $('list').empty();
+                        uthuk();
+                    }
+                    //document.body.setStyle('background-image','url(img/bg_uthuk.jpg)');
+                }
+            });
+
+            $('undeadBTN').addEvents({
+                click: function() {
+                    $('undead_cards').empty();
+                    if ($('nbcards').value) {
+                        for (j = 0; j < $('nbcards').value; j++) {
+                            $('list').empty();
+                            undead();
+                        }
+                    } else {
+                        $('list').empty();
+                        undead();
+                    }
+                    //document.body.setStyle('background-image','url(img/bg_undead.jpg)');
+                }
+            });
+
+            var daqanSlide = new Fx.Slide('daqanSlide').hide();
+            var uthukSlide = new Fx.Slide('uthukSlide').hide();
+            var undeadSlide = new Fx.Slide('undeadSlide').hide();
+            $('daqantoggle').addEvent('click', function(e){
+                e = new Event(e);
+                daqanSlide.toggle();
+            });
+            $('uthuktoggle').addEvent('click', function(e){
+                e = new Event(e);
+                uthukSlide.toggle();
+            });
+            $('undeadtoggle').addEvent('click', function(e){
+                e = new Event(e);
+                undeadSlide.toggle();
+            });
+            btnopt();
+            assignopt();
+        });
+
+        function daqan() {
+            var card = new Element('div', {
+                'class': 'card'
+            });
+            var cardheader = new Element('div', {
+                'class': 'cardheader'
+            });
+            var cardlogo = new Element('div', {
+                'class': 'cardlogo'
+            });
+            var cardname = new Element('div', {
+                'class': 'cardname'
+            });
+            var cardid = new Element('div', {
+                'class': 'cardid'
+            });
+            var cardcontent = new Element('div', {
+                'class': 'cardcontent'
+            });
+            var cardfooter = new Element('div', {
+                'class': 'cardfooter'
+            });
+
+            card.inject($('daqan_cards'));
+            cardheader.inject(card);
+            cardlogo.inject(cardheader);
+            cardname.inject(cardheader);
+            cardid.inject(cardheader);
+            cardcontent.inject(card);
+            cardfooter.inject(card);
+            
+            var rad_Ga_val = 8;
+            $$('.rad_Ga').each(function(el){
+                if(el.checked){
+                    rad_Ga_val = el.value;
+                }
+            });
+
+            var units = [{
+                name: "Garde de la citadelle",
+                cost: 4,
+                qty: rad_Ga_val,
+                num: "01",
+                id: "Ga"
+            }, {
+                name: "Archers Yeoman",
+                cost: 4,
+                qty: 5,
+                num: "02",
+                id: "Ar"
+            }, {
+                name: "Mages de bataille de Greyhaven",
+                cost: 5,
+                qty: 3,
+                num: "03",
+                id: "Ma"
+            }, {
+                name: "Cavaliers de Riverwatch",
+                cost: 6,
+                qty: 3,
+                num: "04",
+                id: "Ca"
+            }, {
+                name: "Golems de Runes",
+                cost: 6,
+                qty: 2,
+                num: "05",
+                id: "GoR"
+            }, {
+                name: "Lanciers de la Citadelle",
+                cost: 6,
+                qty: 3,
+                num: "06",
+                id: "La"
+            }, {
+                name: "Cuiracier",
+                cost: 6,
+                qty: 2,
+                num: "07",
+                id: "Cu"
+            }, {
+                name: "Guerrier Roc",
+                cost: 8,
+                qty: 1,
+                num: "08",
+                id: "Gu"
+            }, {
+                name: "Golem de Siège",
+                cost: 8,
+                qty: 1,
+                num: "09",
+                id: "GoS"
+            }, {
+                name: "Tente de Commandement",
+                cost: -5,
+                qty: 1,
+                num: "10",
+                id: "TC"
+            }, {
+                name: "Barricade",
+                cost: 1,
+                qty: 3,
+                num: "11",
+                id: "Ba"
+            }, {
+                name: "Aiguille de Crystal",
+                cost: 1,
+                qty: 2,
+                num: "12",
+                id: "Ai"
+            }];
+            
+            var chk_dg_Ga = $('chk_dg_Ga').checked;
+            var chk_dg_Ar = $('chk_dg_Ar').checked;
+            var chk_dg_Ma = $('chk_dg_Ma').checked;
+            var chk_dg_Ca = $('chk_dg_Ca').checked;
+            var chk_dg_GoR = $('chk_dg_GoR').checked;
+            var chk_dg_La = $('chk_dg_La').checked;
+            var chk_dg_Cu = $('chk_dg_Cu').checked;
+            var chk_dg_Gu = $('chk_dg_Gu').checked;
+            var chk_dg_GoS = $('chk_dg_GoS').checked;
+            
+            var chk_dg_TC = $('chk_dg_TC').checked;
+            var chk_dg_BA = $('chk_dg_BA').checked;
+            var chk_dg_AI = $('chk_dg_AI').checked;
+            
+            
+            
+            var daqan = [];
+            units.each(function(el) {
+                for (var i = 0; i < el.qty; ++i) {
+                    
+                    if(el.num=="01"){
+                        if(chk_dg_Ga){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="02"){
+                        if(chk_dg_Ar){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="03"){
+                        if(chk_dg_Ma){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="04"){
+                        if(chk_dg_Ca){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="05"){
+                        if(chk_dg_GoR){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="06"){
+                        if(chk_dg_La){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="07"){
+                        if(chk_dg_Cu){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="08"){
+                        if(chk_dg_Gu){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="09"){
+                        if(chk_dg_GoS){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="10"){
+                        if(chk_dg_TC){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="11"){
+                        if(chk_dg_BA){
+                           daqan.push(el); 
+                        }
+                    }
+                    else if(el.num=="12"){
+                        if(chk_dg_AI){
+                           daqan.push(el); 
+                        }
+                    }
+                    else{
+                       daqan.push(el); 
+                    }
+                }
+            });
+            var maxcost = 50;
+
+            var footercost = new Element('div', {
+                html: maxcost,
+                'class': 'footercost left'
+            });
+            footercost.inject(cardfooter)
+
+            var cardunits = [];
+            var maxunit = daqan.length;
+            for (i = 0; i < 100; i++) {
+                maxcost = createunit(daqan, maxcost, maxunit,cardunits);    
+                if(maxcost=='0'){
+                    i=99;
+                }
+            }
+            var type = "daqan"
+            createcard(cardunits, cardname, cardcontent, cardid, type);
+            
+            var reste = $('reste').value;
+            
+            if (reste > 0) {
+                var costunit = new Element('div', {
+                    html: reste,
+                    'class': 'costunit left'
+                });
+                var arcane = new Element('div', {
+                    html: 'Arcane - x' + reste,
+                    'class': 'unit'
+                });
+                var arcanelogo = new Element('img', {
+                    src: 'img/units/arcane.png',
+                    'class': 'arcanelogo right'
+                });
+                costunit.inject(cardcontent);
+                arcanelogo.inject(cardcontent);
+                arcane.inject(cardcontent);
+                var header = cardid.get('html');
+                header = header + reste + 'Arc';
+                cardid.set('html', header);
+            }
+            var logo = new Element('img', {
+                src: 'img/daqanico.png',
+                styles: {
+                    'position': 'absolute',
+                    'top': '10px',
+                    'left': '0px',
+                    width: '63px',
+                    height: '63px'
+                }
+            });
+            logo.inject(cardlogo, 'top');
+
+            cardheader.removeClass('uthukheader');
+            cardheader.removeClass('undeadheader');
+            cardheader.addClass('daqanheader');
+        };
+
+        function uthuk() {
+            var card = new Element('div', {
+                'class': 'card'
+            });
+            var cardheader = new Element('div', {
+                'class': 'cardheader'
+            });
+            var cardlogo = new Element('div', {
+                'class': 'cardlogo'
+            });
+            var cardname = new Element('div', {
+                'class': 'cardname'
+            });
+            var cardid = new Element('div', {
+                'class': 'cardid'
+            });
+            var cardcontent = new Element('div', {
+                'class': 'cardcontent'
+            });
+            var cardfooter = new Element('div', {
+                'class': 'cardfooter'
+            });
+
+            card.inject($('uthuk_cards'));
+            cardheader.inject(card);
+            cardlogo.inject(cardheader);
+            cardname.inject(cardheader);
+            cardid.inject(cardheader);
+            cardcontent.inject(card);
+            cardfooter.inject(card);
+            
+            var rad_Fa_val = 8;
+            $$('.rad_Fa').each(function(el){
+                if(el.checked){
+                    rad_Fa_val = el.value;
+                }
+            });
+
+            var units = [{
+                name: "Faucheurs de Sang",
+                cost: 4,
+                qty: rad_Fa_val,
+                num: "01",
+                id: "Fa"
+            }, {
+                name: "Légion Vipère",
+                cost: 4,
+                qty: 5,
+                num: "02",
+                id: "Le"
+            }, {
+                name: "Berserkers",
+                cost: 4,
+                qty: 3,
+                num: "03",
+                id: "Be"
+            }, {
+                name: "Soeurs de Sang",
+                cost: 5,
+                qty: 3,
+                num: "04",
+                id: "So"
+            }, {
+                name: "Ecorcheurs Féroces",
+                cost: 6,
+                qty: 2,
+                num: "05",
+                id: "Ec"
+            }, {
+                name: "Grotesque",
+                cost: 6,
+                qty: 2,
+                num: "06",
+                id: "Go"
+            }, {
+                name: "Obscène",
+                cost: 6,
+                qty: 2,
+                num: "07",
+                id: "Ob"
+            }, {
+                name: "Seigneur du Chaos",
+                cost: 8,
+                qty: 1,
+                num: "08",
+                id: "Se"
+            }, {
+                name: "Funeste",
+                cost: 8,
+                qty: 1,
+                num: "09",
+                id: "Fu"
+            }, {
+                name: "Tente de Commandement",
+                cost: -5,
+                qty: 1,
+                num: "10",
+                id: "TC"
+            }, {
+                name: "Barricade",
+                cost: 1,
+                qty: 3,
+                num: "11",
+                id: "Ba"
+            }, {
+                name: "Champ de sang",
+                cost: 1,
+                qty: 2,
+                num: "12",
+                id: "Ch"
+            }];
+            
+            var chk_ut_Fa = $('chk_ut_Fa').checked;
+            var chk_ut_Le = $('chk_ut_Le').checked;
+            var chk_ut_Be = $('chk_ut_Be').checked;
+            var chk_ut_So = $('chk_ut_So').checked;
+            var chk_ut_Ec = $('chk_ut_Ec').checked;
+            var chk_ut_Gr = $('chk_ut_Gr').checked;
+            var chk_ut_Ob = $('chk_ut_Ob').checked;
+            var chk_ut_Se = $('chk_ut_Se').checked;
+            var chk_ut_Fu = $('chk_ut_Fu').checked;
+
+            var chk_ut_TC = $('chk_ut_TC').checked;
+            var chk_ut_BA = $('chk_ut_BA').checked;
+            var chk_ut_CH = $('chk_ut_CH').checked;
+            
+            var uthuk = [];
+            units.each(function(el) {
+                for (var i = 0; i < el.qty; ++i) {
+                    if(el.num=="01"){
+                        if(chk_ut_Fa){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="02"){
+                        if(chk_ut_Le){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="03"){
+                        if(chk_ut_Be){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="04"){
+                        if(chk_ut_So){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="05"){
+                        if(chk_ut_Ec){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="06"){
+                        if(chk_ut_Gr){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="07"){
+                        if(chk_ut_Ob){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="08"){
+                        if(chk_ut_Se){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="09"){
+                        if(chk_ut_Fu){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="10"){
+                        if(chk_ut_TC){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="11"){
+                        if(chk_ut_BA){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else if(el.num=="12"){
+                        if(chk_ut_CH){
+                           uthuk.push(el); 
+                        }
+                    }
+                    else{
+                       uthuk.push(el); 
+                    }
+                }
+            });
+            
+
+            var maxcost = 50;
+
+            var footercost = new Element('div', {
+                html: maxcost,
+                'class': 'footercost left'
+            });
+            footercost.inject(cardfooter)
+
+            
+            var cardunits = [];
+            var maxunit = uthuk.length;
+            for (i = 0; i < 100; i++) {
+                maxcost = createunit(uthuk, maxcost, maxunit,cardunits);    
+                if(maxcost=='0'){
+                    i=99;
+                }
+            }
+            
+            var type = "uthuk"
+            createcard(cardunits, cardname, cardcontent, cardid, type);
+            var reste = $('reste').value
+            if (reste > 0) {
+                var costunit = new Element('div', {
+                    html: reste,
+                    'class': 'costunit left'
+                });
+                var arcane = new Element('div', {
+                    html: 'Arcane - x' + reste,
+                    'class': 'unit'
+                });
+                var arcanelogo = new Element('img', {
+                    src: 'img/units/arcane.png',
+                    'class': 'arcanelogo right'
+                });
+                costunit.inject(cardcontent);
+                arcanelogo.inject(cardcontent);
+                arcane.inject(cardcontent);
+                var header = cardid.get('html');
+                header = header + reste + 'Arc';
+                cardid.set('html', header);
+            }
+            var logo = new Element('img', {
+                src: 'img/uthukico.png',
+                styles: {
+                    'position': 'absolute',
+                    'top': '10px',
+                    'left': '0px',
+                    width: '63px',
+                    height: '63px'
+                }
+            });
+            logo.inject(cardlogo, 'top');
+            cardheader.removeClass('daqanheader');
+            cardheader.removeClass('undeadheader');
+            cardheader.addClass('uthukheader');
+
+        };
+
+        function undead() {
+            var card = new Element('div', {
+                'class': 'card'
+            });
+            var cardheader = new Element('div', {
+                'class': 'cardheader'
+            });
+            var cardlogo = new Element('div', {
+                'class': 'cardlogo'
+            });
+            var cardname = new Element('div', {
+                'class': 'cardname'
+            });
+            var cardid = new Element('div', {
+                'class': 'cardid'
+            });
+            var cardcontent = new Element('div', {
+                'class': 'cardcontent'
+            });
+            var cardfooter = new Element('div', {
+                'class': 'cardfooter'
+            });
+
+            card.inject($('undead_cards'));
+            cardheader.inject(card);
+            cardlogo.inject(cardheader);
+            cardname.inject(cardheader);
+            cardid.inject(cardheader);
+            cardcontent.inject(card);
+            cardfooter.inject(card);
+            
+            var rad_Ra_val = 6;
+            $$('.rad_Ra').each(function(el){
+                if(el.checked){
+                    rad_Ra_val = el.value;
+                }
+            });
+            
+            var rad_CI_val = 4;
+            $$('.rad_CI').each(function(el){
+                if(el.checked){
+                    rad_CI_val = el.value;
+                }
+            });
+
+            var units = [{
+                name: "Ranimés",
+                cost: 4,
+                qty: rad_Ra_val,
+                num: "01",
+                id: "Ra"
+            }, {
+                name: "Archers Squelettes",
+                cost: 4,
+                qty: 4,
+                num: "02",
+                id: "Ar"
+            }, {
+                name: "Horreurs D'Os",
+                cost: 3,
+                qty: 4,
+                num: "03",
+                id: "Ho"
+            }, {
+                name: "Nécromenciens",
+                cost: 5,
+                qty: 3,
+                num: "04",
+                id: "No"
+            }, {
+                name: "Chevalier De La Mort",
+                cost: 6,
+                qty: 3,
+                num: "05",
+                id: "Ch"
+            }, {
+                name: "Spectres",
+                cost: 6,
+                qty: 2,
+                num: "06",
+                id: "Sp"
+            }, {
+                name: "Barghests",
+                cost: 6,
+                qty: 2,
+                num: "07",
+                id: "Ba"
+            }, {
+                name: "Banshee",
+                cost: 8,
+                qty: 1,
+                num: "08",
+                id: "Ban"
+            }, {
+                name: "Dragon Des Tumulus",
+                cost: 10,
+                qty: 1,
+                num: "09",
+                id: "Dr"
+            }, {
+                name: "Tente de Commandement",
+                cost: -5,
+                qty: 1,
+                num: "10",
+                id: "TC"
+            }, {
+                name: "Cimetière",
+                cost: 1,
+                qty: rad_CI_val,
+                num: "11",
+                id: "Ci"
+            }, {
+                name: "Sol pestilenciel",
+                cost: 1,
+                qty: 1,
+                num: "12",
+                id: "So"
+            }];
+            
+            var chk_un_Ra = $('chk_un_Ra').checked;
+            var chk_un_Ar = $('chk_un_Ar').checked;
+            var chk_un_Ho = $('chk_un_Ho').checked;
+            var chk_un_No = $('chk_un_No').checked;
+            var chk_un_Ch = $('chk_un_Ch').checked;
+            var chk_un_Sp = $('chk_un_Sp').checked;
+            var chk_un_Ba = $('chk_un_Ba').checked;
+            var chk_un_Ban = $('chk_un_Ban').checked;
+            var chk_un_Dr = $('chk_un_Dr').checked;
+            
+            var chk_un_TC = $('chk_un_TC').checked;
+            var chk_un_CI = $('chk_un_CI').checked;
+            var chk_un_SO = $('chk_un_SO').checked;
+            
+            var undead = [];
+            units.each(function(el) {
+                for (var i = 0; i < el.qty; ++i) {
+                    if(el.num=="01"){
+                        if(chk_un_Ra){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="02"){
+                        if(chk_un_Ar){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="03"){
+                        if(chk_un_Ho){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="04"){
+                        if(chk_un_No){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="05"){
+                        if(chk_un_Ch){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="06"){
+                        if(chk_un_Sp){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="07"){
+                        if(chk_un_Ba){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="08"){
+                        if(chk_un_Ban){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="09"){
+                        if(chk_un_Dr){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="10"){
+                        if(chk_un_TC){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="11"){
+                        if(chk_un_CI){
+                           undead.push(el); 
+                        }
+                    }
+                    else if(el.num=="12"){
+                        if(chk_un_SO){
+                           undead.push(el); 
+                        }
+                    }
+                    else{
+                       undead.push(el); 
+                    }
+                }
+            });
+
+            var maxcost = 50;
+
+            var footercost = new Element('div', {
+                html: maxcost,
+                'class': 'footercost left'
+            });
+            footercost.inject(cardfooter);
+
+            
+            var cardunits = [];
+            var maxunit = undead.length;
+            for (i = 0; i < 100; i++) {
+                maxcost = createunit(undead, maxcost, maxunit,cardunits);    
+                if(maxcost=='0'){
+                    i=99;
+                }
+            }
+
+            var type = "undead"
+            createcard(cardunits, cardname, cardcontent, cardid, type);
+            var reste = $('reste').value
+            if (reste > 0) {
+                var costunit = new Element('div', {
+                    html: reste,
+                    'class': 'costunit left'
+                });
+                var arcane = new Element('div', {
+                    html: 'Arcane - x' + reste,
+                    'class': 'unit'
+                });
+                var arcanelogo = new Element('img', {
+                    src: 'img/units/arcane.png',
+                    'class': 'arcanelogo right'
+                });
+                costunit.inject(cardcontent);
+                arcanelogo.inject(cardcontent);
+                arcane.inject(cardcontent);
+                var header = cardid.get('html');
+                header = header + reste + 'Arc';
+                cardid.set('html', header);
+            }
+            var logo = new Element('img', {
+                src: 'img/undeadico.png',
+                styles: {
+                    'position': 'absolute',
+                    'top': '10px',
+                    'left': '0px',
+                    width: '63px',
+                    height: '63px'
+                }
+            });
+            logo.inject(cardlogo, 'top');
+            cardheader.removeClass('daqanheader');
+            cardheader.removeClass('uthukheader');
+            cardheader.addClass('undeadheader');
+
+        };
+
+        function createunit(arr, maxcost, maxunit,cardunits) {
+            var unit = aleatoire(maxunit);
+            var reste;
+            var el = arr[unit];
+            reste = maxcost - el.cost;
+            var newunit = new Element('div', {
+                html: el.cost + ' : ' + el.name+'('+maxcost+'-'+el.cost+') '+reste,
+                'class': 'unit' + el.num
+            });
+            if (el.cost <= maxcost) {
+                var nb = count('unit' + el.num);
+                if (nb < el.qty) {
+                    cardunits.push(el);
+                    newunit.inject($('list'));
+                    maxcost = maxcost - el.cost;
+                    $('reste').innerHTML = reste;
+                    $('reste').value = reste;
+                }
+            }
+            return (maxcost);
+        }
+
+        function count(unit) {
+            var lg = $$('.' + unit);
+            return lg.length;
+        }
+
+        function aleatoire(N) {
+            return (Math.floor((N) * Math.random()));
+        }
+
+        function createcard(arr, cardname, cardcontent, cardid, type) {
+            var unitmaxval = 0;
+            var unitmaxname = "";
+
+            var sort_by = function(field, reverse, primer){
+
+               var key = primer ? 
+                   function(x) {return primer(x[field])} : 
+                   function(x) {return x[field]};
+
+               reverse = !reverse ? 1 : -1;
+
+               return function (a, b) {
+                   return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+                 } 
+            }
+            
+            arr.sort(sort_by('num', false, function(a){return a.toUpperCase()}));
+            
+			var namearr=[];
+			var newarr=[];
+			arr.each(function(obj) {
+				if(namearr.indexOf(obj.name)=='-1'){
+					namearr.push(obj.name);
+					newarr.push(obj);
+				}
+			});
+			
+            newarr.each(function(el) {
+				var qty = count('unit' + el.num);
+				var cardunit = new Element('div', {
+					html: el.name + ' - x' + qty,
+					'class': 'unit'
+				});
+				var costunit = new Element('div', {
+					html: el.cost * qty,
+					'class': 'costunit left'
+				});
+
+				var unitlogo = new Element('img', {
+					src: 'img/units/'+type+el.num+'.png',
+					'class': 'logounit right'
+				});
+
+				if (qty != 0) {
+					costunit.inject(cardcontent);
+					cardunit.inject(cardcontent);
+					unitlogo.inject(cardcontent)
+					var id = cardid.get('HTML');
+					id = id + qty + el.id;
+					cardid.set('html', id);
+				}
+				if (unitmaxval < qty) {
+					unitmaxval = qty;
+					unitmaxname = el.name + " x" + qty;
+				}
+                
+                
+            });
+            generateName(type, cardname)
+        }
+
+        function generateName(type, cardname) {
+            var finalName = "";
+            if (type == "daqan") {
+                var names = ['Les Gardiens', 'Les Héros', 'Les Gardes', 'Les Eclaireurs', 'Les Défenseurs', 'L\'Armée', 'La Cohorte', 'La Garnison', 'La Division', 'La Confrérie', 'Le Bataillon', 'L\'Escadron', 'Le Régiment'];
+                var locations = ['de la Citadelle', 'de la Cité', 'de la Vallée', 'du Royaume'];
+                var randomName = names[Math.floor(Math.random() * names.length)];
+                var randomLocation = locations[Math.floor(Math.random() * locations.length)];
+                finalName = randomName + ' ' + randomLocation;
+            }
+            if (type == "uthuk") {
+                var names = ['Le Clan', 'Le Peuple', 'La Horde', 'La Tribu', 'La Caste', 'La Coterie', 'La Nuée', 'La Nation', 'La Peuplade', 'La Meute', 'Les Guerriers'];
+                var locations = ['des Marais', 'des Montagnes', 'des Deserts', 'du Marais', 'de la Montagnes', 'du Desert'];
+                var randomName = names[Math.floor(Math.random() * names.length)];
+                var randomLocation = locations[Math.floor(Math.random() * locations.length)];
+                finalName = randomName + ' ' + randomLocation;
+            }
+            if (type == "undead") {
+                var names = ['Les Disciples', 'Les Marcheurs', 'Les Destructeurs', 'Les Morts', 'Les Défunts', 'Les Faucheurs', 'Les Réssucités', 'La Légion', 'L\'Armée', 'La Mort', 'La Faucheuse', 'Les Légion'];
+                var locations = ['de la Brume', 'de la Crypte', 'des Ténèbres', 'du Passé', 'de L\'Histoire'];
+                var randomName = names[Math.floor(Math.random() * names.length)];
+                var randomLocation = locations[Math.floor(Math.random() * locations.length)];
+                finalName = randomName + ' ' + randomLocation;
+            }
+            cardname.set('html', finalName);
+        }
+
+        function btnopt(){
+            $$('.btn_opt').each(function(el){
+                var chkid = el.get('param');
+                var checked = $(chkid).get('checked');
+                if(checked){
+                    el.addClass('checked')
+                }
+                else{
+                    el.removeClass('checked')
+                }
+                el.addEvents({
+                    click: function() {
+                        if($(chkid).checked){
+                            $(chkid).set('checked', false)
+                            this.removeClass('checked')
+                        }
+                        else{
+                            $(chkid).set('checked', true);
+                            this.addClass('checked')
+                        }
+                    }
+                })
+                
+            });
+        }
+        
+        function assignopt(){
+            $('dq_base').addEvent('click', function(e){
+                $('chk_dg_Ga').set('checked',true);
+                $('chk_dg_Ar').set('checked',true);
+                $('chk_dg_Ma').set('checked',false);
+                $('chk_dg_Ca').set('checked',true);
+                $('chk_dg_GoR').set('checked',true);
+                $('chk_dg_La').set('checked',false);
+                $('chk_dg_Cu').set('checked',false);
+                $('chk_dg_Gu').set('checked',true);
+                $('chk_dg_GoS').set('checked',false);
+                $('chk_dg_TC').set('checked',true);
+                $('chk_dg_BA').set('checked',false);
+                $('chk_dg_AI').set('checked',false);
+                $('btn_dg_Ga').addClass('checked');
+                $('btn_dg_Ar').addClass('checked');
+                $('btn_dg_Ma').removeClass('checked');
+                $('btn_dg_Ca').addClass('checked');
+                $('btn_dg_GoR').addClass('checked');
+                $('btn_dg_La').removeClass('checked');
+                $('btn_dg_Cu').removeClass('checked');
+                $('btn_dg_Gu').addClass('checked');
+                $('btn_dg_GoS').removeClass('checked');
+                $('btn_dg_TC').addClass('checked');
+                $('btn_dg_BA').removeClass('checked');
+                $('btn_dg_AI').removeClass('checked');
+                $('radGa5').set('checked',true);                
+            });
+            $('dq_ext').addEvent('click', function(e){
+                $('chk_dg_Ga').set('checked',true);
+                $('chk_dg_Ar').set('checked',false);
+                $('chk_dg_Ma').set('checked',true);
+                $('chk_dg_Ca').set('checked',false);
+                $('chk_dg_GoR').set('checked',false);
+                $('chk_dg_La').set('checked',true);
+                $('chk_dg_Cu').set('checked',true);
+                $('chk_dg_Gu').set('checked',false);
+                $('chk_dg_GoS').set('checked',true);
+                $('chk_dg_TC').set('checked',true);
+                $('chk_dg_BA').set('checked',true);
+                $('chk_dg_AI').set('checked',true);
+                $('btn_dg_Ga').addClass('checked');
+                $('btn_dg_Ar').removeClass('checked');
+                $('btn_dg_Ma').addClass('checked');
+                $('btn_dg_Ca').removeClass('checked');
+                $('btn_dg_GoR').removeClass('checked');
+                $('btn_dg_La').addClass('checked');
+                $('btn_dg_Cu').addClass('checked');
+                $('btn_dg_Gu').removeClass('checked');
+                $('btn_dg_GoS').addClass('checked');
+                $('btn_dg_TC').addClass('checked');
+                $('btn_dg_BA').addClass('checked');
+                $('btn_dg_AI').addClass('checked');
+                $('radGa3').set('checked',true);
+            });
+            $('dq_baseext').addEvent('click', function(e){
+                $('chk_dg_Ga').set('checked',true);
+                $('chk_dg_Ar').set('checked',true);
+                $('chk_dg_Ma').set('checked',true);
+                $('chk_dg_Ca').set('checked',true);
+                $('chk_dg_GoR').set('checked',true);
+                $('chk_dg_La').set('checked',true);
+                $('chk_dg_Cu').set('checked',true);
+                $('chk_dg_Gu').set('checked',true);
+                $('chk_dg_GoS').set('checked',true);
+                $('chk_dg_TC').set('checked',true);
+                $('chk_dg_BA').set('checked',true);
+                $('chk_dg_AI').set('checked',true);
+                $('btn_dg_Ga').addClass('checked');
+                $('btn_dg_Ar').addClass('checked');
+                $('btn_dg_Ma').addClass('checked');
+                $('btn_dg_Ca').addClass('checked');
+                $('btn_dg_GoR').addClass('checked');
+                $('btn_dg_La').addClass('checked');
+                $('btn_dg_Cu').addClass('checked');
+                $('btn_dg_Gu').addClass('checked');
+                $('btn_dg_GoS').addClass('checked');
+                $('btn_dg_TC').addClass('checked');
+                $('btn_dg_BA').addClass('checked');
+                $('btn_dg_AI').addClass('checked');
+                $('radGa8').set('checked',true);
+            });
+            $('ut_base').addEvent('click', function(e){
+                $('chk_ut_Fa').set('checked',true);
+                $('chk_ut_Le').set('checked',true);
+                $('chk_ut_Be').set('checked',false);
+                $('chk_ut_So').set('checked',false);
+                $('chk_ut_Ec').set('checked',true);
+                $('chk_ut_Gr').set('checked',false);
+                $('chk_ut_Ob').set('checked',true);
+                $('chk_ut_Se').set('checked',true);
+                $('chk_ut_Fu').set('checked',false);
+                $('chk_ut_TC').set('checked',true);
+                $('chk_ut_BA').set('checked',false);
+                $('chk_ut_CH').set('checked',false);
+                $('btn_ut_Fa').addClass('checked');
+                $('btn_ut_Le').addClass('checked');
+                $('btn_ut_Be').removeClass('checked');
+                $('btn_ut_So').removeClass('checked');
+                $('btn_ut_Ec').addClass('checked');
+                $('btn_ut_Gr').removeClass('checked');
+                $('btn_ut_Ob').addClass('checked');
+                $('btn_ut_Se').addClass('checked');
+                $('btn_ut_Fu').removeClass('checked');
+                $('btn_ut_TC').addClass('checked');
+                $('btn_ut_BA').removeClass('checked');
+                $('btn_ut_CH').removeClass('checked');
+                $('radFa5').set('checked',true);                
+            });
+            $('ut_ext').addEvent('click', function(e){
+                $('chk_ut_Fa').set('checked',true);
+                $('chk_ut_Le').set('checked',false);
+                $('chk_ut_Be').set('checked',true);
+                $('chk_ut_So').set('checked',true);
+                $('chk_ut_Ec').set('checked',false);
+                $('chk_ut_Gr').set('checked',true);
+                $('chk_ut_Ob').set('checked',false);
+                $('chk_ut_Se').set('checked',false);
+                $('chk_ut_Fu').set('checked',true);
+                $('chk_ut_TC').set('checked',true);
+                $('chk_ut_BA').set('checked',true);
+                $('chk_ut_CH').set('checked',true);
+                $('btn_ut_Fa').addClass('checked');
+                $('btn_ut_Le').removeClass('checked');
+                $('btn_ut_Be').addClass('checked');
+                $('btn_ut_So').addClass('checked');
+                $('btn_ut_Ec').removeClass('checked');
+                $('btn_ut_Gr').addClass('checked');
+                $('btn_ut_Ob').removeClass('checked');
+                $('btn_ut_Se').removeClass('checked');
+                $('btn_ut_Fu').addClass('checked');
+                $('btn_ut_TC').addClass('checked');
+                $('btn_ut_BA').addClass('checked');
+                $('btn_ut_CH').addClass('checked');
+                $('radFa3').set('checked',true);
+            });
+            $('ut_baseext').addEvent('click', function(e){
+                $('chk_ut_Fa').set('checked',true);
+                $('chk_ut_Le').set('checked',true);
+                $('chk_ut_Be').set('checked',true);
+                $('chk_ut_So').set('checked',true);
+                $('chk_ut_Ec').set('checked',true);
+                $('chk_ut_Gr').set('checked',true);
+                $('chk_ut_Ob').set('checked',true);
+                $('chk_ut_Se').set('checked',true);
+                $('chk_ut_Fu').set('checked',true);
+                $('chk_ut_TC').set('checked',true);
+                $('chk_ut_BA').set('checked',true);
+                $('chk_ut_CH').set('checked',true);
+                $('btn_ut_Fa').addClass('checked');
+                $('btn_ut_Le').addClass('checked');
+                $('btn_ut_Be').addClass('checked');
+                $('btn_ut_So').addClass('checked');
+                $('btn_ut_Ec').addClass('checked');
+                $('btn_ut_Gr').addClass('checked');
+                $('btn_ut_Ob').addClass('checked');
+                $('btn_ut_Se').addClass('checked');
+                $('btn_ut_Fu').addClass('checked');
+                $('btn_ut_TC').addClass('checked');
+                $('btn_ut_BA').addClass('checked');
+                $('btn_ut_CH').addClass('checked');
+                $('radFa8').set('checked',true);
+            });
+			$('un_ext1').addEvent('click', function(e){
+                $('chk_un_Ra').set('checked',true);
+                $('chk_un_Ar').set('checked',true);
+                $('chk_un_Ho').set('checked',false);
+                $('chk_un_No').set('checked',false);
+                $('chk_un_Ch').set('checked',true);
+                $('chk_un_Sp').set('checked',true);
+                $('chk_un_Ba').set('checked',false);
+                $('chk_un_Ban').set('checked',false);
+                $('chk_un_Dr').set('checked',true);
+                $('chk_un_TC').set('checked',true);
+                $('chk_un_CI').set('checked',true);
+                $('chk_un_SO').set('checked',true);
+                $('btn_un_Ra').addClass('checked');
+                $('btn_un_Ar').addClass('checked');
+                $('btn_un_Ho').removeClass('checked');
+                $('btn_un_No').removeClass('checked');
+                $('btn_un_Ch').addClass('checked');
+                $('btn_un_Sp').addClass('checked');
+                $('btn_un_Ba').removeClass('checked');
+                $('btn_un_Ban').removeClass('checked');
+                $('btn_un_Dr').addClass('checked');
+                $('btn_un_TC').addClass('checked');
+                $('btn_un_CI').addClass('checked');
+                $('btn_un_SO').addClass('checked');
+                $('radRa3').set('checked',true);
+                $('radCI2').set('checked',true);
+            });
+            $('un_ext2').addEvent('click', function(e){
+                $('chk_un_Ra').set('checked',true);
+                $('chk_un_Ar').set('checked',false);
+                $('chk_un_Ho').set('checked',true);
+                $('chk_un_No').set('checked',true);
+                $('chk_un_Ch').set('checked',false);
+                $('chk_un_Sp').set('checked',false);
+                $('chk_un_Ba').set('checked',true);
+                $('chk_un_Ban').set('checked',true);
+                $('chk_un_Dr').set('checked',false);
+                $('chk_un_TC').set('checked',true);
+                $('chk_un_CI').set('checked',true);
+                $('chk_un_SO').set('checked',false);
+                $('btn_un_Ra').addClass('checked');
+                $('btn_un_Ar').removeClass('checked');
+                $('btn_un_Ho').addClass('checked');
+                $('btn_un_No').addClass('checked');
+                $('btn_un_Ch').removeClass('checked');
+                $('btn_un_Sp').removeClass('checked');
+                $('btn_un_Ba').addClass('checked');
+                $('btn_un_Ban').addClass('checked');
+                $('btn_un_Dr').removeClass('checked');
+                $('btn_un_TC').addClass('checked');
+                $('btn_un_CI').addClass('checked');
+                $('btn_un_SO').removeClass('checked');
+                $('radRa3').set('checked',true);
+                $('radCI2').set('checked',true);
+            });
+            $('un_ext1ext2').addEvent('click', function(e){
+                $('chk_un_Ra').set('checked',true);
+                $('chk_un_Ar').set('checked',true);
+                $('chk_un_Ho').set('checked',true);
+                $('chk_un_No').set('checked',true);
+                $('chk_un_Ch').set('checked',true);
+                $('chk_un_Sp').set('checked',true);
+                $('chk_un_Ba').set('checked',true);
+                $('chk_un_Ban').set('checked',true);
+                $('chk_un_Dr').set('checked',true);
+                $('chk_un_TC').set('checked',true);
+                $('chk_un_CI').set('checked',true);
+                $('chk_un_SO').set('checked',true);
+                $('btn_un_Ra').addClass('checked');
+                $('btn_un_Ar').addClass('checked');
+                $('btn_un_Ho').addClass('checked');
+                $('btn_un_No').addClass('checked');
+                $('btn_un_Ch').addClass('checked');
+                $('btn_un_Sp').addClass('checked');
+                $('btn_un_Ba').addClass('checked');
+                $('btn_un_Ban').addClass('checked');
+                $('btn_un_Dr').addClass('checked');
+                $('btn_un_TC').addClass('checked');
+                $('btn_un_CI').addClass('checked');
+                $('btn_un_SO').addClass('checked');
+                $('radRa6').set('checked',true);
+                $('radCI4').set('checked',true);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="list" style="display:none"></div>
+    <div id="reste" style="background-color:#FF0000;display:none"></div>
+
+    <div id="pagewrap">
+        <header>
+			<a href="index.html"><img src="img/logo.png" alt="" /></a>
+            <div id="genBTN" class="btn" style="float:none">Nouvelles armées</div><div class="fontring">
+            Nombre de carte à générer : <input id="nbcards" type="text" size="5" value="1"/> <span style="font-size:15px">(Attention! Ralentissements possibles avec une valeur trop grande)</span></div>
+        </header>
+
+        <section id="column1">
+            <div style="width:300px; margin:auto; position:relative; text-align:center;">
+                <div id="daqanBTN" class="btn btndaqan">Nouvelle armée Daqan</div>
+                <div id="daqantoggle" class="btn btntool"></div>
+                <div style="clear:both"></div>
+                <div id="daqanSlide" class="btnslide">
+                    <div id="dq_base" class="btn_base" >Jeux de base</div>
+                    <div id="dq_ext" class="btn_base" >Extension</div>
+                    <div id="dq_baseext" class="btn_base" >Jeux de base + extension</div>
+                    <input id="chk_dg_Ga" class="opt_chk" type="checkbox" checked="checked" />
+                    <div id="btn_dg_Ga" class="btn_opt" param="chk_dg_Ga" style="margin-right: -110px;">Garde de la citadelle</div>
+                    <div class="rad_opt">
+                        <input id="radGa8" class="rad_Ga" type="radio" checked="checked" value="8" name="gardes">8
+                        <input id="radGa5"  class="rad_Ga" type="radio" value="5" name="gardes">5
+                        <input id="radGa3"  class="rad_Ga" type="radio" value="3" name="gardes">3
+                    </div>
+                    <input id="chk_dg_Ar" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_Ar" class="btn_opt" param="chk_dg_Ar">Archers Yeoman</div>
+                    <input id="chk_dg_Ma" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_Ma" class="btn_opt" param="chk_dg_Ma">Mages de bataille de Greyhaven</div>
+                    <input id="chk_dg_Ca" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_Ca" class="btn_opt" param="chk_dg_Ca">Cavaliers de Riverwatch</div>
+                    <input id="chk_dg_GoR" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_GoR" class="btn_opt" param="chk_dg_GoR">Golems de Runes</div>
+                    <input id="chk_dg_La" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_La" class="btn_opt" param="chk_dg_La">Lanciers de la Citadelle</div>
+                    <input id="chk_dg_Cu" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_Cu" class="btn_opt" param="chk_dg_Cu">Cuiracier</div>
+                    <input id="chk_dg_Gu" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_Gu" class="btn_opt" param="chk_dg_Gu">Guerrier Roc</div>
+                    <input id="chk_dg_GoS" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_GoS" class="btn_opt" param="chk_dg_GoS">Golem de Siège</div>
+                    <input id="chk_dg_TC" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_TC" class="btn_opt" param="chk_dg_TC">Tente de commandement</div>
+                    <input id="chk_dg_BA" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_BA" class="btn_opt" param="chk_dg_BA">Barricade</div>
+                    <input id="chk_dg_AI" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_dg_AI" class="btn_opt" param="chk_dg_AI">Aiguille de Crystal</div>
+                </div>
+            </div>
+            <div id="daqan_cards"></div>
+        </section>
+
+        <section id="column2">
+            <div style="width:300px; margin:auto; position:relative; text-align:center;">
+                <div id="uthukBTN" class="btn btnuthuk">Nouvelle armée Uthuk Y'llan</div>
+                <div id="uthuktoggle" class="btn btntool"></div>
+                <div style="clear:both"></div>
+                <div id="uthukSlide" class="btnslide">
+                    <div id="ut_base" class="btn_base" >Jeux de base</div>
+                    <div id="ut_ext" class="btn_base" >Extension</div>
+                    <div id="ut_baseext" class="btn_base" >Jeux de base + extension</div>
+                    <input id="chk_ut_Fa" class="opt_chk" type="checkbox" checked="checked" />
+                    <div id="btn_ut_Fa" class="btn_opt" param="chk_ut_Fa" style="margin-right: -110px;">Faucheurs de Sangs</div>
+                    <div class="rad_opt">
+                        <input id="radFa8" class="rad_Fa" type="radio" checked="checked" value="8" name="faucheurs">8
+                        <input id="radFa5"  class="rad_Fa" type="radio" value="5" name="faucheurs">5
+                        <input id="radFa3"  class="rad_Fa" type="radio" value="3" name="faucheurs">3
+                    </div>
+                    <input id="chk_ut_Le" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_Le" class="btn_opt" param="chk_ut_Le">Légion Vipère</div>
+                    <input id="chk_ut_Be" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_Be" class="btn_opt" param="chk_ut_Be">Berserkers </div>
+                    <input id="chk_ut_So" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_So" class="btn_opt" param="chk_ut_So">Soeurs de Sang</div>
+                    <input id="chk_ut_Ec" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_Ec" class="btn_opt" param="chk_ut_Ec">Ecorcheurs Féroces</div>
+                    <input id="chk_ut_Gr" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_Gr" class="btn_opt" param="chk_ut_Gr">Grotesque </div>
+                    <input id="chk_ut_Ob" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_Ob" class="btn_opt" param="chk_ut_Ob">Obscène </div>
+                    <input id="chk_ut_Se" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_Se" class="btn_opt" param="chk_ut_Se">Seigneur du Chaos</div>
+                    <input id="chk_ut_Fu" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_Fu" class="btn_opt" param="chk_ut_Fu">Funeste</div>
+                    <input id="chk_ut_TC" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_TC" class="btn_opt" param="chk_ut_TC">Tente de commandement</div>
+                    <input id="chk_ut_BA" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_BA" class="btn_opt" param="chk_ut_BA">Barricade</div>
+                    <input id="chk_ut_CH" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_ut_CH" class="btn_opt" param="chk_ut_CH">Champ de sang</div>   
+                </div>
+            </div>
+            <div id="uthuk_cards"></div>
+        </section>
+
+        <aside id="column3">
+            <div style="width:300px; margin:auto; position:relative; text-align:center">
+                <div id="undeadBTN" class="btn btnundead">Nouvelle armée Mort-Vivant</div>
+                <div id="undeadtoggle" class="btn btntool"></div>
+                <div style="clear:both"></div>
+                <div id="undeadSlide" class="btnslide">
+                    <div id="un_ext1" class="btn_base" >Hérauts de Briseffroi</div>
+                    <div id="un_ext2" class="btn_base" >Terreurs des Brumes</div>
+                    <div id="un_ext1ext2" class="btn_base" >Hérauts de Briseffroi + Terreurs des Brumes</div>
+                    <input id="chk_un_Ra" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Ra" class="btn_opt" param="chk_un_Ra" style="margin-right: -110px;">Ranimés</div>
+                       <div class="rad_opt">
+							<input id="radRa6" class="rad_Ra" type="radio" checked="checked" value="6" name="reanime">6
+							<input id="radRa3"  class="rad_Ra" type="radio" value="3" name="reanime">3
+						</div>
+                    <input id="chk_un_Ar" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Ar" class="btn_opt" param="chk_un_Ar">Archers Squelettes</div>
+                    <input id="chk_un_Ho" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Ho" class="btn_opt" param="chk_un_Ho">Horreurs D'Os </div>
+                    <input id="chk_un_No" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_No" class="btn_opt" param="chk_un_No">Nécromenciens</div>
+                    <input id="chk_un_Ch" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Ch" class="btn_opt" param="chk_un_Ch">Chevalier De La Mort</div>
+                    <input id="chk_un_Sp" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Sp" class="btn_opt" param="chk_un_Sp">Spectres</div>
+                    <input id="chk_un_Ba" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Ba" class="btn_opt" param="chk_un_Ba">Barghests</div>
+                    <input id="chk_un_Ban" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Ban" class="btn_opt" param="chk_un_Ban">Banshee</div>
+                    <input id="chk_un_Dr" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_Dr" class="btn_opt" param="chk_un_Dr">Dragon Des Tumulus</div>
+                    <input id="chk_un_TC" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_TC" class="btn_opt" param="chk_un_TC">Tente de commandement</div>
+                    <input id="chk_un_CI" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_CI" class="btn_opt" param="chk_un_CI" style="margin-right: -110px;">Cimetière</div>
+                        <div class="rad_opt">
+							<input id="radCI4" class="rad_CI" type="radio" checked="checked" value="4" name="cimetiere">4
+							<input id="radCI2"  class="rad_CI" type="radio" value="2" name="cimetiere">2
+						</div>
+                    <input id="chk_un_SO" class="opt_chk" type="checkbox" checked="checked" /><div id="btn_un_SO" class="btn_opt" param="chk_un_SO">Sol Pestilenciel</div>   
+				</div>
+            </div>
+            <div id="undead_cards"></div>
+        </aside>
+
+        <footer>
+        </footer>
+
+    </div>
+</body>
+
+</html>

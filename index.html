@@ -11,42 +11,42 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
-  color: #777;
+  color: #333;
+  background-color:#FFF;
   line-height: 1.8;
-}
-
-/* Create a Parallax Effect */
-.bgimg-1 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('images/background.jpg');
-  min-height: 100%;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1{
-    background-attachment: scroll;
-    min-height: 400px;
-  }
 }
 </style>
 </head>
 <body>
 
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-	<a href="7thcontinentmap/index.html" target="_blank"><button class="w3-button w3-black"><i class="fa fa-map"></i> The 7th Continent Map</button></a>
-  </div>
+
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>kandjar.github.io</b></h1>
+  <p>Welcome to my website</p>
+</header>
+<div class="w3-container">
+	<div class="w3-row">
+	  <div class="w3-container w3-third">
+		<a href="apps\BL2_ARMY\index.html" target="_blank">
+			<div class="w3-card w3-hover-black w3-hover-shadow">
+				<img src="images\bla.jpg" alt="Alps" style="width:100%">
+				<div class="w3-container w3-center">
+				  <p>BattleLore Second Edition : Army generator</p>
+				</div>
+			</div>
+		 </a>
+	  </div>
+	  <div class="w3-container w3-third">
+		<a href="apps\7C_MAP\index.html" target="_blank">
+			<div class="w3-card w3-hover-black w3-hover-shadow">
+				<img src="images\7c.jpg" alt="Alps" style="width:100%">
+				<div class="w3-container w3-center">
+				  <p>The 7th Continent : Map</p>
+				</div>
+			</div>
+		</a>
+	  </div>
+	</div>
 </div>
 
 </body>
