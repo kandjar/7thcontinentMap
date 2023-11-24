@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Document sans nom</title>
+<script type="text/javascript" src="lib/MooTools-Core-1.6.0.js"></script>
+<script type="text/javascript" src="lib/MooTools-More-1.6.0.js"></script>
+<script>
+window.addEvent('load',function(){
+	add_dice_set();
+	remove_dice_set();
+});
+
+function add_dice_set(){
+	$('add_dice_set').addEvent('click', function(){
+		$('config').value++;
+		var diceSetVal = $('config').value;
+
+		var dice_set_container = new Element('div', {
+			id : 'dice_set_container'+diceSetVal,
+			class : 'set',
+			styles:{
+				clear:'both'
+			}
+		});
+		var dice_set_clear = new Element('div', {
+			id : 'dice_set_clear'+diceSetVal,
+			styles:{
+				clear:'both'
+			}
+		});
+		var dice_set_btn_roll = new Element('div', {
+			id : 'dice_set_btn_roll'+diceSetVal,
+			class:'btn',
+			html: '',
+			value : diceSetVal,
+			styles:{
+				width:'74px',
+				height:'74px',
+				'float':'left',
+				'line-height':'74px',
+				'text-align':'center',
+				'font-weight':'bold',
+				'background-image':'url(img/roll.png)'
+			},
+			events: {
+				click: function(){
+					roll_dice_set(diceSetVal);
+				}
+			}
+		});
+
+		var dice_set_btn_container = new Element('div', {
+			id : 'dice_set_btn_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-left':'10px',
+				'margin-right':'10px'
+			}
+		});
+
+			var dice_set_btn_add_dice = new Element('div', {
+				id : 'dice_set_btn_add_dice'+diceSetVal,
+				class:'btn violet',
+				html : '+',
+				value : '',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						this.value++;
+						add_dice(diceSetVal,this.value);
+					}
+				}
+			});
+
+			var dice_set_btn_remove_dice = new Element('div', {
+				id : 'dice_set_btn_remove_dice'+diceSetVal,
+				class:'btn violet',
+				html : '-',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold',
+					'margin-top':'10px'
+				},
+				events: {
+					click: function(){
+						remove_dice(diceSetVal,dice_set_btn_add_dice.value);
+						dice_set_btn_add_dice.value--;
+					}
+				}
+			});
+
+		var dice_set_dice_container = new Element('div', {
+			id : 'dice_set_dice_container'+diceSetVal,
+			styles:{
+				'float':'left'
+			}
+		});
+
+		dice_set_container.inject($('sets'));
+		dice_set_btn_roll.inject(dice_set_container);
+		dice_set_btn_container.inject(dice_set_container);
+		dice_set_clear.inject(dice_set_container);
+		dice_set_btn_add_dice.inject(dice_set_btn_container);
+		dice_set_btn_remove_dice.inject(dice_set_btn_container);
+		dice_set_dice_container.inject(dice_set_container);
+	});
+}
+
+function remove_dice_set(){
+	$('remove_dice_set').addEvent('click', function(){
+		$('dice_set_container'+$('config').value).destroy();
+		$('config').value--;
+	});
+}
+
+function add_dice(diceSetVal,diceVal){
+	var dice_btn = new Element('div', {
+		id : 'dice_btn'+diceSetVal+diceVal,
+		class:'btn violet',
+		//html: 'Dice '+diceSetVal+diceVal,
+		styles:{
+			width:'74px',
+			height:'74px',
+			'margin-right':'10px',
+			'float':'left',
+			'line-height':'74px',
+			'text-align':'center',
+			'font-weight':'bold',
+			'margin-top':'0px'
+		}
+	});
+	var dice_set_clear = new Element('div', {
+		id : 'dice_set_clear'+diceSetVal,
+		styles:{
+			clear:'both'
+		}
+	});
+	$('dice_set_clear'+diceSetVal).destroy();
+	dice_btn.inject($('dice_set_dice_container'+diceSetVal));
+	dice_set_clear.inject($('dice_set_dice_container'+diceSetVal),'after');
+}
+
+function remove_dice(diceSetVal,diceVal){
+	$('dice_btn'+diceSetVal+diceVal).destroy();
+}
+
+function roll_dice_set(diceSetVal){
+	var dices = $$('#dice_set_dice_container'+diceSetVal+' div.btn');
+	dices.each(function(el){
+		var val = Math.floor((Math.random() * 6) + 1);
+
+		if(val==1){
+			el.setStyle('background-image','url(img/1.png)');
+		}
+		else if(val==2){
+			el.setStyle('background-image','url(img/2.png)');
+		}
+		else if(val==3){
+			el.setStyle('background-image','url(img/3.png)');
+		}
+		else if(val==4){
+			el.setStyle('background-image','url(img/4.png)');
+		}
+		else if(val==5){
+			el.setStyle('background-image','url(img/5.png)');
+		}
+		else{
+			el.setStyle('background-image','url(img/6.png)');
+		}
+
+	});
+}
+
+
+</script>
+<style>
+	html,body{
+		background-color: #EEEEEE;
+	}
+	#container{
+		width: 50%;
+		margin: auto;
+		padding:10px
+	}
+	.set{
+		background-color: white;
+		margin: 10px;
+		padding: 10px;
+		border-bottom:3px solid #DDD;
+	}
+	.btn{
+		background-color: #CCC;
+		cursor:pointer;
+	}
+	.btn:hover{
+		background-color: #DDD;
+	}
+	.violet{
+		background-color: #64377C;
+		color:#FFFFFF;
+	}
+	.violet:hover{
+		background-color: #9A6DB2;
+		color:#FFFFFF;
+	}
+</style>
+</head>
+
+<body>
+<div id="container">
+	<div id="head" class="set">
+		<input id="config" type="text" value="0" size="5" style="display:none" />
+		<div id="add_dice_set" class="btn" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left">+</div>
+		<div id="remove_dice_set" class="btn" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left; margin-left:10px;">-</div>
+		<div style="clear:both"></div>
+	</div>
+	<div id="sets" style="clear:both;"></div>
+	<div style="clear:both"></div>
+</div>
+</body>
+</html>
