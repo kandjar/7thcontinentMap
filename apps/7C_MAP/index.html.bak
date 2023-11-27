@@ -118,6 +118,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -137,6 +139,8 @@
               <td><br>
               </td>
               <td><img class="icon bottomleft" src="images/icy_maze.png"><img src="images/355.png"></td>
+              <td><br>
+              </td>
               <td><br>
               </td>
               <td><br>
@@ -202,6 +206,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -243,6 +249,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -276,6 +284,8 @@
               <td> <br>
               </td>
               <td><img src="images/368.png"></td>
+              <td><br>
+              </td>
               <td><img src="images/426.png"> </td>
               <td><br>
               </td>
@@ -308,6 +318,8 @@
               <td> <img src="images/396.png"></td>
               <td> <img src="images/416.png"></td>
               <td> <img src="images/446.png"></td>
+              <td><br>
+              </td>
               <td><img src="images/184.png"> </td>
               <td><img src="images/397.png"> </td>
               <td><br>
@@ -346,6 +358,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -374,6 +388,8 @@
               <td> <img src="images/374.png"></td>
               <td> <img src="images/338.png"></td>
               <td><img src="images/387.png"> </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
               <td><br>
@@ -418,6 +434,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><img src="images/633.png"> <img class="icon bottomleft" src="images/torch.png"></td>
@@ -436,6 +454,8 @@
               </td>
               <td> <img src="images/154.png"> </td>
               <td> <br>
+              </td>
+              <td><br>
               </td>
               <td><br>
               </td>
@@ -496,6 +516,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><img src="images/641.png"></td>
@@ -510,6 +532,8 @@
               <td><img src="images/066.png"> </td>
               <td><img src="images/136.png"> </td>
               <td><img src="images/111.png"> </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
               <td><br>
@@ -567,6 +591,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -603,6 +629,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -622,6 +650,8 @@
               <td><img src="images/C.png"></td>
               <td> <img src="images/D.png"></td>
               <td> <span style="color: black;"><img class="icon bottomleft" src="images/boat0.png"></span>
+              </td>
+              <td><br>
               </td>
               <td><br>
               </td>
@@ -691,6 +721,8 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -720,6 +752,8 @@
               <td><br>
               </td>
               <td> <br>
+              </td>
+              <td><br>
               </td>
               <td><br>
               </td>
@@ -774,96 +808,12 @@
               </td>
               <td><br>
               </td>
-            </tr>
-            <tr>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
               <td><br>
               </td>
             </tr>
             <tr>
               <td><br>
               </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-            </tr>
-            <tr>
               <td><br>
               </td>
               <td><br>
@@ -950,6 +900,54 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -994,8 +992,58 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
               <td><br>
               </td>
               <td><br>

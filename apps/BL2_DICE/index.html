@@ -3,8 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Document sans nom</title>
-<script type="text/javascript" src="lib/MooTools-Core-1.6.0.js"></script>
-<script type="text/javascript" src="lib/MooTools-More-1.6.0.js"></script>
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<script src="inc/MooTools-Core-1.6.0.js"></script>
+<script src="inc/MooTools-More-1.6.0.js"></script>
 <script>
 window.addEvent('load',function(){
 	add_dice_set();
@@ -31,7 +32,7 @@ function add_dice_set(){
 		});
 		var dice_set_btn_roll = new Element('div', {
 			id : 'dice_set_btn_roll'+diceSetVal,
-			class:'btn',
+			class:'btn w3-light-grey w3-hover-opacity',
 			html: '',
 			value : diceSetVal,
 			styles:{
@@ -41,7 +42,8 @@ function add_dice_set(){
 				'line-height':'74px',
 				'text-align':'center',
 				'font-weight':'bold',
-				'background-image':'url(img/roll.png)'
+				'background-image':'url(img/roll.png)',
+				'margin-bottom':'10px'
 			},
 			events: {
 				click: function(){
@@ -54,8 +56,7 @@ function add_dice_set(){
 			id : 'dice_set_btn_container'+diceSetVal,
 			styles:{
 				'float':'left',
-				'margin-left':'10px',
-				'margin-right':'10px'
+				'margin-left':'10px'
 			}
 		});
 
@@ -67,9 +68,11 @@ function add_dice_set(){
 				styles:{
 					width:'32px',
 					height:'32px',
+					'margin-bottom':'10px',
 					'line-height':'32px',
 					'text-align':'center',
-					'font-weight':'bold'
+					'font-weight':'bold',
+					'margin-right':'10px'
 				},
 				events: {
 					click: function(){
@@ -136,7 +139,8 @@ function add_dice(diceSetVal,diceVal){
 			'line-height':'74px',
 			'text-align':'center',
 			'font-weight':'bold',
-			'margin-top':'0px'
+			'margin-top':'0px',
+			'margin-bottom':'10px'
 		}
 	});
 	var dice_set_clear = new Element('div', {
@@ -184,8 +188,11 @@ function roll_dice_set(diceSetVal){
 
 </script>
 <style>
-	html,body{
-		background-color: #EEEEEE;
+	body{
+		background-image: url(img/dicerpg.jpg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-color:#35302a;
 	}
 	#container{
 		width: 50%;
@@ -193,17 +200,14 @@ function roll_dice_set(diceSetVal){
 		padding:10px
 	}
 	.set{
-		background-color: white;
+		background-image: url(img/setbg.png);
 		margin: 10px;
 		padding: 10px;
+		padding-bottom: 0px;
 		border-bottom:3px solid #DDD;
 	}
 	.btn{
-		background-color: #CCC;
 		cursor:pointer;
-	}
-	.btn:hover{
-		background-color: #DDD;
 	}
 	.violet{
 		background-color: #64377C;
@@ -218,10 +222,11 @@ function roll_dice_set(diceSetVal){
 
 <body>
 <div id="container">
+	<img src="img/logo.png" alt="" />
 	<div id="head" class="set">
 		<input id="config" type="text" value="0" size="5" style="display:none" />
-		<div id="add_dice_set" class="btn" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left">+</div>
-		<div id="remove_dice_set" class="btn" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left; margin-left:10px;">-</div>
+		<div id="add_dice_set" class="btn w3-green w3-hover-opacity" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left;margin-bottom:10px">+</div>
+		<div id="remove_dice_set" class="btn w3-red w3-hover-opacity" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left; margin-left:10px;margin-bottom:10px">-</div>
 		<div style="clear:both"></div>
 	</div>
 	<div id="sets" style="clear:both;"></div>

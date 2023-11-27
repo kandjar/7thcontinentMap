@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Document sans nom</title>
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<script src="inc/MooTools-Core-1.6.0.js"></script>
+<script src="inc/MooTools-More-1.6.0.js"></script>
+<script>
+window.addEvent('load',function(){
+	add_dice_set();
+	remove_dice_set();
+});
+
+function add_dice_set(){
+	$('add_dice_set').addEvent('click', function(){
+		$('config').value++;
+		var diceSetVal = $('config').value;
+		
+		var dice_set_container = new Element('div', {
+			id : 'dice_set_container'+diceSetVal,
+			class : 'set',
+			styles:{
+				clear:'both'
+			}
+		});
+		var dice_set_clear = new Element('div', {
+			id : 'dice_set_clear'+diceSetVal,
+			styles:{
+				clear:'both'
+			}
+		});
+		var dice_set_btn_roll = new Element('div', {
+			id : 'dice_set_btn_roll'+diceSetVal,
+			class:'btn w3-light-grey w3-hover-opacity',
+			html: '',
+			value : diceSetVal,
+			styles:{
+				width:'74px',
+				height:'74px',
+				'float':'left',
+				'line-height':'74px',
+				'text-align':'center',
+				'font-weight':'bold',
+				'background-image':'url(img/roll.png)'
+			},
+			events: {
+				click: function(){
+					roll_dice_set(diceSetVal);
+				}
+			}
+		});
+
+		var dice_set_btn_container_red = new Element('div', {
+			id : 'dice_set_btn_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-left':'10px'
+			}
+		});
+
+			var dice_set_btn_add_dice_red = new Element('div', {
+				id : 'dice_set_btn_add_dice_red'+diceSetVal,
+				class:'btn red',
+				html : '+',
+				value : '',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'margin-bottom':'10px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						this.value++;
+						add_dice(diceSetVal,this.value,'red');
+					}
+				}
+			});
+
+			var dice_set_btn_remove_dice_red = new Element('div', {
+				id : 'dice_set_btn_remove_dice_red'+diceSetVal,
+				class:'btn red',
+				html : '-',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						remove_dice(diceSetVal,dice_set_btn_add_dice_red.value,'red');
+						dice_set_btn_add_dice_red.value--;
+					}
+				}
+			});
+		
+		var dice_set_btn_container_blue = new Element('div', {
+			id : 'dice_set_btn_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-left':'10px'
+			}
+		});
+		
+			var dice_set_btn_add_dice_blue = new Element('div', {
+				id : 'dice_set_btn_add_dice_blue'+diceSetVal,
+				class:'btn blue',
+				html : '+',
+				value : '',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'margin-bottom':'10px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						this.value++;
+						add_dice(diceSetVal,this.value,'blue');
+					}
+				}
+			});
+
+			var dice_set_btn_remove_dice_blue = new Element('div', {
+				id : 'dice_set_btn_remove_dice_blue'+diceSetVal,
+				class:'btn blue',
+				html : '-',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						remove_dice(diceSetVal,dice_set_btn_add_dice_blue.value,'blue');
+						dice_set_btn_add_dice_blue.value--;
+					}
+				}
+			});
+
+		var dice_set_btn_container_yellow = new Element('div', {
+			id : 'dice_set_btn_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-left':'10px'
+			}
+		});
+		
+			var dice_set_btn_add_dice_yellow = new Element('div', {
+				id : 'dice_set_btn_add_dice_yellow'+diceSetVal,
+				class:'btn yellow',
+				html : '+',
+				value : '',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'margin-bottom':'10px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						this.value++;
+						add_dice(diceSetVal,this.value,'yellow');
+					}
+				}
+			});
+
+			var dice_set_btn_remove_dice_yellow = new Element('div', {
+				id : 'dice_set_btn_remove_dice_yellow'+diceSetVal,
+				class:'btn yellow',
+				html : '-',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						remove_dice(diceSetVal,dice_set_btn_add_dice_yellow.value,'yellow');
+						dice_set_btn_add_dice_yellow.value--;
+					}
+				}
+			});
+		
+		var dice_set_btn_container_black = new Element('div', {
+			id : 'dice_set_btn_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-left':'10px'
+			}
+		});
+			
+			var dice_set_btn_add_dice_black= new Element('div', {
+				id : 'dice_set_btn_add_dice_black'+diceSetVal,
+				class:'btn black',
+				html : '+',
+				value : '',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'margin-bottom':'10px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						this.value++;
+						add_dice(diceSetVal,this.value,'black');
+					}
+				}
+			});
+
+			var dice_set_btn_remove_dice_black = new Element('div', {
+				id : 'dice_set_btn_remove_dice_black'+diceSetVal,
+				class:'btn black',
+				html : '-',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						remove_dice(diceSetVal,dice_set_btn_add_dice_black.value,'black');
+						dice_set_btn_add_dice_black.value--;
+					}
+				}
+			});
+		
+		var dice_set_btn_container_grey = new Element('div', {
+			id : 'dice_set_btn_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-left':'10px'
+			}
+		});
+			
+			var dice_set_btn_add_dice_grey= new Element('div', {
+				id : 'dice_set_btn_add_dice_grey'+diceSetVal,
+				class:'btn grey',
+				html : '+',
+				value : '',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'margin-bottom':'10px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						this.value++;
+						add_dice(diceSetVal,this.value,'grey');
+					}
+				}
+			});
+
+			var dice_set_btn_remove_dice_grey = new Element('div', {
+				id : 'dice_set_btn_remove_dice_grey'+diceSetVal,
+				class:'btn grey',
+				html : '-',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						remove_dice(diceSetVal,dice_set_btn_add_dice_grey.value,'grey');
+						dice_set_btn_add_dice_grey.value--;
+					}
+				}
+			});
+		
+		var dice_set_btn_container_brown = new Element('div', {
+			id : 'dice_set_btn_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-left':'10px'
+			}
+		});
+			
+			var dice_set_btn_add_dice_brown= new Element('div', {
+				id : 'dice_set_btn_add_dice_brown'+diceSetVal,
+				class:'btn brown',
+				html : '+',
+				value : '',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'margin-bottom':'10px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						this.value++;
+						add_dice(diceSetVal,this.value,'brown');
+					}
+				}
+			});
+
+			var dice_set_btn_remove_dice_brown= new Element('div', {
+				id : 'dice_set_btn_remove_dice_brown'+diceSetVal,
+				class:'btn brown',
+				html : '-',
+				styles:{
+					width:'32px',
+					height:'32px',
+					'line-height':'32px',
+					'text-align':'center',
+					'font-weight':'bold'
+				},
+				events: {
+					click: function(){
+						remove_dice(diceSetVal,dice_set_btn_add_dice_brown.value,'brown');
+						dice_set_btn_add_dice_brown.value--;
+					}
+				}
+			});
+		
+
+		var dice_set_dice_container = new Element('div', {
+			id : 'dice_set_dice_container'+diceSetVal,
+			styles:{
+				'float':'left',
+				'margin-bottom':'10px',
+				'width': '100%'
+			}
+		});
+
+		dice_set_container.inject($('sets'));
+		dice_set_btn_roll.inject(dice_set_container);
+		
+		dice_set_btn_container_red.inject(dice_set_container);
+		dice_set_btn_container_blue.inject(dice_set_container);
+		dice_set_btn_container_yellow.inject(dice_set_container);
+		dice_set_btn_container_black.inject(dice_set_container);
+		dice_set_btn_container_grey.inject(dice_set_container);
+		dice_set_btn_container_brown.inject(dice_set_container);
+		dice_set_btn_add_dice_red.inject(dice_set_btn_container_red);
+		dice_set_btn_remove_dice_red.inject(dice_set_btn_container_red);
+		dice_set_btn_add_dice_blue.inject(dice_set_btn_container_blue);
+		dice_set_btn_remove_dice_blue.inject(dice_set_btn_container_blue);
+		dice_set_btn_add_dice_yellow.inject(dice_set_btn_container_yellow);
+		dice_set_btn_remove_dice_yellow.inject(dice_set_btn_container_yellow);
+		dice_set_btn_add_dice_black.inject(dice_set_btn_container_black);
+		dice_set_btn_remove_dice_black.inject(dice_set_btn_container_black);
+		dice_set_btn_add_dice_grey.inject(dice_set_btn_container_grey);
+		dice_set_btn_remove_dice_grey.inject(dice_set_btn_container_grey);
+		dice_set_btn_add_dice_brown.inject(dice_set_btn_container_brown);
+		dice_set_btn_remove_dice_brown.inject(dice_set_btn_container_brown);
+		dice_set_dice_container.inject(dice_set_container);
+		dice_set_clear.inject(dice_set_container);
+	});
+}
+
+function remove_dice_set(){
+	$('remove_dice_set').addEvent('click', function(){
+		$('dice_set_container'+$('config').value).destroy();
+		$('config').value--;
+	});
+}
+	
+function add_dice(diceSetVal,diceVal,color){	
+	var dice_btn = new Element('div', {
+		id : 'dice_btn_'+color+diceSetVal+diceVal,
+		class:'btn '+color,
+		//html: 'Dice '+diceSetVal+diceVal,
+		color: color,
+		styles:{
+			width:'74px',
+			height:'74px',
+			'margin-right':'10px',
+			'margin-top':'10px',
+			'float':'left',
+			'line-height':'74px',
+			'text-align':'center',
+			'font-weight':'bold'
+		}
+	});
+	dice_btn.inject($('dice_set_dice_container'+diceSetVal));
+}
+	
+function remove_dice(diceSetVal,diceVal,color){
+	$('dice_btn_'+color+diceSetVal+diceVal).destroy();
+}
+
+function roll_dice_set(diceSetVal){
+	var dices = $$('#dice_set_dice_container'+diceSetVal+' div.btn');
+	
+	dices.each(function(el){
+		var val = Math.floor((Math.random() * 6) + 1);
+		var color = el.get('color');
+		if(color=='red'){		
+			if(val==1){
+				el.setStyle('background-image','url(img/red1.png)');
+			}
+			else if(val==2){
+				el.setStyle('background-image','url(img/red2.png)');
+			}
+			else if(val==3){
+				el.setStyle('background-image','url(img/red3.png)');
+			}
+			else if(val==4){
+				el.setStyle('background-image','url(img/red4.png)');
+			}
+			else if(val==5){
+				el.setStyle('background-image','url(img/red5.png)');
+			}
+			else{
+				el.setStyle('background-image','url(img/red6.png)');
+			}
+		}
+		else if(color=='blue'){
+			if(val==1){
+				el.setStyle('background-image','url(img/blue1.png)');
+			}
+			else if(val==2){
+				el.setStyle('background-image','url(img/blue2.png)');
+			}
+			else if(val==3){
+				el.setStyle('background-image','url(img/blue3.png)');
+			}
+			else if(val==4){
+				el.setStyle('background-image','url(img/blue4.png)');
+			}
+			else if(val==5){
+				el.setStyle('background-image','url(img/blue5.png)');
+			}
+			else{
+				el.setStyle('background-image','url(img/blue6.png)');
+			}
+		}
+		else if(color=='yellow'){
+			if(val==1){
+				el.setStyle('background-image','url(img/yellow1.png)');
+			}
+			else if(val==2){
+				el.setStyle('background-image','url(img/yellow2.png)');
+			}
+			else if(val==3){
+				el.setStyle('background-image','url(img/yellow3.png)');
+			}
+			else if(val==4){
+				el.setStyle('background-image','url(img/yellow4.png)');
+			}
+			else if(val==5){
+				el.setStyle('background-image','url(img/yellow5.png)');
+			}
+			else{
+				el.setStyle('background-image','url(img/yellow6.png)');
+			}
+		}
+		else if(color=='black'){
+			if(val==1){
+				el.setStyle('background-image','url(img/black1.png)');
+			}
+			else if(val==2){
+				el.setStyle('background-image','url(img/black2.png)');
+			}
+			else if(val==3){
+				el.setStyle('background-image','url(img/black3.png)');
+			}
+			else if(val==4){
+				el.setStyle('background-image','url(img/black4.png)');
+			}
+			else if(val==5){
+				el.setStyle('background-image','url(img/black5.png)');
+			}
+			else{
+				el.setStyle('background-image','url(img/black6.png)');
+			}
+		}
+		else if(color=='grey'){
+			if(val==1){
+				el.setStyle('background-image','url(img/grey1.png)');
+			}
+			else if(val==2){
+				el.setStyle('background-image','url(img/grey2.png)');
+			}
+			else if(val==3){
+				el.setStyle('background-image','url(img/grey3.png)');
+			}
+			else if(val==4){
+				el.setStyle('background-image','url(img/grey4.png)');
+			}
+			else if(val==5){
+				el.setStyle('background-image','url(img/grey5.png)');
+			}
+			else{
+				el.setStyle('background-image','url(img/grey6.png)');
+			}
+		}
+		else{
+			if(val==1){
+				el.setStyle('background-image','url(img/brown1.png)');
+			}
+			else if(val==2){
+				el.setStyle('background-image','url(img/brown2.png)');
+			}
+			else if(val==3){
+				el.setStyle('background-image','url(img/brown3.png)');
+			}
+			else if(val==4){
+				el.setStyle('background-image','url(img/brown4.png)');
+			}
+			else if(val==5){
+				el.setStyle('background-image','url(img/brown5.png)');
+			}
+			else{
+				el.setStyle('background-image','url(img/brown6.png)');
+			}
+		}			  
+	});
+}
+	
+
+</script>
+<style>
+	body{
+		background-image: url(img/dicerpg.jpg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-color:#35302a;
+	}
+	#container{
+		width: 50%;
+		margin: auto;
+		padding:10px
+	}
+	.set{
+		background-image: url(img/setbg.png);
+		margin: 10px;
+		padding: 10px;
+		padding-bottom: 0px;
+		border-bottom:3px solid #DDD;
+	}
+	.btn{
+		cursor:pointer;
+	}
+	.red{
+		background-color: #DE3A2E;
+		color:#FFFFFF;
+	}
+	.red:hover{
+		background-color: #DD6158;
+		color:#FFFFFF;
+	}
+	.blue{
+		background-color: #1D1CA6;
+		color:#FFFFFF;
+	}
+	.blue:hover{
+		background-color: #4242A5;
+		color:#FFFFFF;
+	}
+	.yellow{
+		background-color: #FADE4C;
+		color:#FFFFFF;
+	}
+	.yellow:hover{
+		background-color: #F9E57C;
+		color:#FFFFFF;
+	}
+	.black{
+		background-color: #000000;
+		color:#FFFFFF;
+	}
+	.black:hover{
+		background-color: #404040;
+		color:#FFFFFF;
+	}
+	.grey{
+		background-color: #A0A0A0;
+		color:#FFFFFF;
+	}
+	.grey:hover{
+		background-color: #C0C0C0;
+		color:#FFFFFF;
+	}
+	.brown{
+		background-color: #5C281B;
+		color:#FFFFFF;
+	}
+	.brown:hover{
+		background-color: #7F4233;
+		color:#FFFFFF;
+	}
+</style>
+</head>
+
+<body>
+<div id="container">
+	<img src="img/logo.png" alt="" />
+	<div id="head" class="set">
+		<input id="config" type="text" value="0" size="5" style="display:none" />
+		<div id="add_dice_set" class="btn w3-green w3-hover-opacity" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left;margin-bottom:10px">+</div>
+		<div id="remove_dice_set" class="btn w3-red w3-hover-opacity" style="width:32px; height:32px; line-height:32px; text-align:center; font-weight:bold; float:left; margin-left:10px;;margin-bottom:10px">-</div>
+		<div style="clear:both"></div>
+	</div>
+	<div id="sets" style="clear:both;"></div>
+	<div style="clear:both"></div>
+</div>
+</body>
+</html>
