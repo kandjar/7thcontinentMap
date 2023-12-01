@@ -33,39 +33,34 @@
 	  		height:200px;
         padding:0px;
       }
-  
       img.icon{
         position:absolute;
       	width:30px;
         height:30px;
       }
-      .topleft{
-      	top:0;
-      	left:0
+      .top {
+         top:0;
       }
-      .topright{
-      	top:0;
-      	right:0
-      }
-      .topright2{
-      	top:30px;
-      	right:0
-      }
-      .topright3{
-      	top:60px;
-      	right:0
-      }
-      .bottomleft{
+      .bottom {
       	bottom:0;
-      	left:0
       }
-      .bottomleft2{
-      	bottom:30px;
-      	left:0
+      .left{
+      	left:0;
       }
-      .bottomright{
-      	bottom:0;
-      	right:0
+      .left2{
+      	left:30px;
+      }
+      .left3{
+      	left:60px;
+      }
+      .right{
+      	right:0;
+      }
+      .right2{
+      	right:30px;
+      }
+      .right3{
+      	right:60px;
       }
       
       
@@ -118,8 +113,6 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
             </tr>
             <tr>
               <td><br>
@@ -138,9 +131,7 @@
               </td>
               <td><br>
               </td>
-              <td><img class="icon bottomleft" src="images/icy_maze.png"><img src="images/355.png"></td>
-              <td><br>
-              </td>
+              <td><img class="icon bottom left" src="images/icy_maze.png"><img src="images/355.png"></td>
               <td><br>
               </td>
               <td><br>
@@ -206,8 +197,6 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
             </tr>
             <tr>
               <td><br>
@@ -242,8 +231,7 @@
               </td>
               <td> <br>
               </td>
-              <td><img src="images/442.png"> </td>
-              <td><br>
+              <td> <br>
               </td>
               <td><br>
               </td>
@@ -266,7 +254,7 @@
               <td> <img src="images/328.png"> </td>
               <td> <img src="images/341.png"> </td>
               <td><img src="images/259.png"> </td>
-              <td> <img src="images/290.png"><img class="icon topright" src="images/lock2.png">
+              <td> <img src="images/290.png"><img class="icon top right" src="images/lock2.png">
               </td>
               <td> <br>
               </td>
@@ -280,13 +268,14 @@
               </td>
               <td><br>
               </td>
-              <td><img src="images/382.png"> </td>
               <td> <br>
               </td>
-              <td><img src="images/368.png"></td>
+              <td> <br>
+              </td>
               <td><br>
               </td>
-              <td><img src="images/426.png"> </td>
+              <td> <br>
+              </td>
               <td><br>
               </td>
               <td><br>
@@ -306,22 +295,24 @@
               <td><img src="images/252.png"> </td>
               <td> <br>
               </td>
-              <td> <img src="images/214.png"> </td>
+              <td><img src="images/214.png"> </td>
               <td><img src="images/198.png"> </td>
-              <td><img class="icon topleft" src="images/boat5.png"> </td>
+              <td><img class="icon top left" src="images/position1.png"> </td>
               <td><br>
+              </td>
+              <td> <br>
               </td>
               <td><br>
               </td>
               <td> <br>
               </td>
-              <td> <img src="images/396.png"></td>
-              <td> <img src="images/416.png"></td>
-              <td> <img src="images/446.png"></td>
-              <td><br>
+              <td> <br>
               </td>
-              <td><img src="images/184.png"> </td>
-              <td><img src="images/397.png"> </td>
+              <td> <br>
+              </td>
+              <td> <img src="images/442.png"></td>
+              <td> <br>
+              </td>
               <td><br>
               </td>
             </tr>
@@ -332,7 +323,7 @@
               </td>
               <td><br>
               </td>
-              <td> <img src="images/258.png"> <img class="icon topleft" src="images/swamp_madness.png"></td>
+              <td> <img src="images/258.png"> <img class="icon top left" src="images/swamp_madness.png"></td>
               <td><br>
               </td>
               <td> <img src="images/262.png"> </td>
@@ -344,20 +335,17 @@
               <td><img src="images/288.png"> </td>
               <td><br>
               </td>
+              <td> <br>
+              </td>
               <td><br>
               </td>
               <td> <br>
               </td>
-              <td><img src="images/427.png"> </td>
+              <td> <img src="images/382.png"> </td>
               <td> <br>
               </td>
-              <td><img src="images/415.png"> </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
+              <td> <img src="images/368.png"></td>
+              <td><img src="images/426.png"> </td>
               <td><br>
               </td>
             </tr>
@@ -378,24 +366,19 @@
               <td> <img src="images/191.png"> </td>
               <td><br>
               </td>
+              <td><img src="images/313.png"> </td>
+              <td> <br>
+              </td>
+              <td> <img src="images/365.png"></td>
               <td><br>
               </td>
               <td> <br>
               </td>
-              <td><br>
-              </td>
-              <td> <img src="images/384.png"></td>
-              <td> <img src="images/374.png"></td>
-              <td> <img src="images/338.png"></td>
-              <td><img src="images/387.png"> </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
+              <td> <img src="images/396.png"></td>
+              <td> <img src="images/416.png"></td>
+              <td><img src="images/446.png"> </td>
+              <td><img src="images/184.png"> </td>
+              <td><img src="images/397.png"> </td>
             </tr>
             <tr>
               <td><br>
@@ -412,33 +395,28 @@
               <td><br>
               </td>
               <td> <img src="images/163.png"> </td>
-              <td> <img class="icon topright" src="images/lock1.png"><img src="images/143.png">
+              <td> <img class="icon top right" src="images/lock4.png"> <img src="images/143.png">
               </td>
-              <td><img src="images/159.png"> </td>
-              <td> <br>
+              <td><br>
               </td>
-              <td> <br>
-              </td>
+              <td> <img src="images/326.png"> </td>
+              <td> <img src="images/339.png"> </td>
+              <td> <img src="images/348.png"> </td>
               <td><br>
               </td>
               <td> <br>
               </td>
-              <td> <br>
-              </td>
-              <td> <img src="images/321.png"> </td>
+              <td> <img src="images/427.png"></td>
               <td><br>
               </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
+              <td><img src="images/415.png"> </td>
               <td><br>
               </td>
               <td><br>
               </td>
             </tr>
             <tr>
-              <td><img src="images/633.png"> <img class="icon bottomleft" src="images/torch.png"></td>
+              <td><img src="images/633.png"> <img class="icon bottom left" src="images/torch.png"></td>
               <td><br>
               </td>
               <td><br>
@@ -446,7 +424,7 @@
               <td> <br>
               </td>
               <td> <img src="images/183.png"></td>
-              <td> <img src="images/196.png"><img class="icon topright" src="images/key1.png">
+              <td> <img src="images/196.png"><img class="icon top right" src="images/key4.png">
               </td>
               <td> <br>
               </td>
@@ -457,24 +435,17 @@
               </td>
               <td><br>
               </td>
+              <td><img src="images/253.png"> </td>
               <td><br>
               </td>
               <td><br>
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
+              <td> <img src="images/384.png"> </td>
+              <td> <img src="images/374.png"></td>
+              <td><img src="images/338.png"> </td>
+              <td><img src="images/387.png"> </td>
               <td><br>
               </td>
               <td><br>
@@ -496,6 +467,7 @@
               </td>
               <td><br>
               </td>
+              <td><img src="images/043.png"> </td>
               <td><br>
               </td>
               <td><br>
@@ -504,14 +476,9 @@
               </td>
               <td><br>
               </td>
-              <td><br>
+              <td> <br>
               </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
+              <td><img src="images/321.png"> </td>
               <td><br>
               </td>
               <td><br>
@@ -528,12 +495,10 @@
               </td>
               <td><img src="images/112.png"></td>
               <td><img src="images/086.png"></td>
-              <td><img src="images/059.png"><img class="icon topright" src="images/key2.png"></td>
+              <td><img src="images/059.png"><img class="icon top right" src="images/key2.png"></td>
               <td><img src="images/066.png"> </td>
               <td><img src="images/136.png"> </td>
               <td><img src="images/111.png"> </td>
-              <td><br>
-              </td>
               <td><br>
               </td>
               <td><br>
@@ -568,22 +533,20 @@
               <td><img src="images/044.png"></td>
               <td><img src="images/072.png"></td>
               <td><img src="images/054.png"></td>
-              <td><img src="images/132.png"> </td>
+              <td><img id="132" src="images/132.png"> </td>
               <td><img src="images/131.png"> </td>
               <td><img src="images/094.png"> </td>
               <td><br>
               </td>
               <td><br>
               </td>
-              <td><img class="icon bottomleft" src="images/boat5.png"> </td>
-              <td><br>
-              </td>
+              <td><img class="icon bottom left" src="images/boat5.png"></td>
               <td><br>
               </td>
               <td><br>
               </td>
               <td><img src="images/312.png"> </td>
-              <td><br>
+              <td> <br>
               </td>
               <td><br>
               </td>
@@ -607,21 +570,18 @@
               </td>
               <td><br>
               </td>
-              <td> <img src="images/038.png"> </td>
-              <td> <img src="images/A.png"> </td>
+              <td><img id="038" src="images/038.png"> </td>
+              <td> <img class="icon top right" src="images/position1.png"> </td>
               <td><br>
               </td>
               <td><img src="images/175.png"> </td>
               <td> <img src="images/120.png"> </td>
-              <td><br>
-              </td>
+              <td><img src="images/088.png"> </td>
               <td><img src="images/125.png"> </td>
-              <td><br>
-              </td>
               <td><img src="images/056.png"> </td>
               <td><img src="images/149.png"> </td>
-              <td><img src="images/241.png"> </td>
-              <td><br>
+              <td> <img src="images/241.png"></td>
+              <td> <br>
               </td>
               <td><br>
               </td>
@@ -645,13 +605,14 @@
               </td>
               <td><br>
               </td>
-              <td> <img src="images/B.png"></td>
-              <td><img src="images/C.png"></td>
-              <td><img src="images/C.png"></td>
-              <td> <img src="images/D.png"></td>
-              <td> <span style="color: black;"><img class="icon bottomleft" src="images/boat0.png"></span>
+              <td> <img class="icon top right" src="images/position1.png"> </td>
+              <td><br>
               </td>
               <td><br>
+              </td>
+              <td> <br>
+              </td>
+              <td> <span style="color: black;"><img class="icon bottom left" src="images/boat0.png"></span>
               </td>
               <td><br>
               </td>
@@ -687,13 +648,14 @@
               </td>
               <td> <br>
               </td>
-              <td> <img src="images/E.png"> </td>
-              <td><img src="images/F.png"></td>
+              <td> <br>
+              </td>
+              <td> <img class="icon bottom left" src="images/boat1.png"> </td>
               <td><br>
               </td>
               <td> <br>
               </td>
-              <td> <img class="icon topright" src="images/gearwheelB.png"><img
+              <td> <img class="icon top right" src="images/gearwheelB.png"><img
                   src="images/007.png"> </td>
               <td><br>
               </td>
@@ -704,8 +666,6 @@
               <td><br>
               </td>
               <td> <span style="color: black;"></span><br>
-              </td>
-              <td><br>
               </td>
               <td><br>
               </td>
@@ -763,8 +723,6 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
             </tr>
             <tr>
               <td><br>
@@ -785,7 +743,7 @@
               </td>
               <td> <br>
               </td>
-              <td><img class="icon topleft" src="images/gearwheelA.png"><img src="images/014.png">
+              <td><img class="icon top left" src="images/gearwheelA.png"><img src="images/014.png">
               </td>
               <td><img src="images/004.png"> </td>
               <td><br>
@@ -808,58 +766,8 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
             </tr>
             <tr>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-              <td><br>
-              </td>
-            </tr>
-            <tr>
-              <td><br>
-              </td>
               <td><br>
               </td>
               <td><br>
@@ -946,6 +854,48 @@
               </td>
               <td><br>
               </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
             </tr>
@@ -992,8 +942,6 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
             </tr>
             <tr>
               <td><br>
@@ -1038,12 +986,8 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
             </tr>
             <tr>
-              <td><br>
-              </td>
               <td><br>
               </td>
               <td><br>
@@ -1135,5 +1079,6 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-</script> </body>
+</script>
+  </body>
 </html>
