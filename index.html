@@ -14,73 +14,77 @@ body, html {
   color: #ccc;
   background-color:#FFF;
   line-height: 1.8;
-  background-image: url('images/background.png');
+  background-image: url('images/bg.jpg');
   min-height: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.header {
+  padding: 10px 16px;
+  background: #FFF;
+  color: #333;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+.sticky + .content {
+  padding-top: 102px;
+}
+
 </style>
+
 </head>
 <body>
 
+ <a href="#"><div class="header w3-button w3-light-grey w3-padding-large w3-block" id="myHeader">
+  <h1><b>kandjar.github.io</b></h1>
+</div></a>
 
-<header class="w3-container w3-center w3-padding-32"> 
-	<h1><b>kandjar.github.io</b></h1>
-	<p>Welcome to my website</p>
-</header>
+<div class="w3-container content" style="margin:50px">
 
-<div class="w3-container" style="width:50%; margin:auto">
-
-	<a href="apps\BL2_ARMY\index.html" target="_blank" >
-		<div class="w3-row w3-white w3-margin w3-hover-red" style="width:200px">
-		  <div class="w3-col" style="width:250px">
-			<img src="images\bl2.jpg" style="width:250px">
-		  </div>
-		  <div class="w3-rest w3-container">
-			<span class="w3-large">BattleLore Second Edition</span><br>
-			<span>Générateur d'armée</span>
-		  </div>
-		</div>
-	</a>
-	<a href="apps\BL2_DICE\index.html" target="_blank">
-		<div class="w3-row w3-white w3-margin w3-hover-red" style="width:200px">
-		  <div class="w3-col" style="width:250px">
-			<img src="images\bl2.jpg" style="width:250px">
-		  </div>
-		  <div class="w3-rest w3-container">
-			<span class="w3-large">BattleLore Second Edition</span><br>
-			<span>Lanceur de dés</span>
-		  </div>
-		</div>
-	</a>
-	<a href="apps\7C_MAP\index.html" target="_blank">
-		<div class="w3-row w3-white w3-margin w3-hover-red" style="width:200px">
-		  <div class="w3-col" style="width:250px">
-			<img src="images\7c.jpg" style="width:250px">
-		  </div>
-		  <div class="w3-rest w3-container">
-			<span class="w3-large">The 7th Continent</span><br>
-			<span>Carte</span>
-		  </div>
-		</div>
-	</a>
-	<a href="apps\DS2_DICE\index.html" target="_blank">
-		<div class="w3-row w3-white w3-margin w3-hover-red" style="width:200px">
-		  <div class="w3-col" style="width:250px">
-			<img src="images\ds2.jpg" style="width:250px">
-		  </div>
-		  <div class="w3-rest w3-container">
-			<span class="w3-large">Descent : Voyages dans les Ténèbres (Seconde Edition) </span><br>
-			<span>Lanceur de dés</span>
-		  </div>
-		</div>
-	</a>
+<div class="w3-row-padding">
+	<div class="w3-quarter w3-margin-bottom">
+	  <img src="images\bl2.jpg" style="width:100%">
+	  <a href="apps\BL2_ARMY\index.html" target="_blank" style="white-space: normal;" class="w3-button w3-light-grey w3-padding-large w3-block"><b>BattleLore Second Edition</b> <br><span class="w3-medium">Générateur d'armée</span></a>
+	</div>
+	<div class="w3-quarter w3-margin-bottom">
+	  <img src="images\bl2.jpg" style="width:100%">
+	  <a href="apps\BL2_DICE\index.html" target="_blank" style="white-space: normal;" class="w3-button w3-light-grey w3-padding-large w3-block"><b>BattleLore Second Edition</b> <br><span class="w3-medium">Lanceur de dés</span></a>
+	</div>
+	<div class="w3-quarter w3-margin-bottom">
+	  <img src="images\7c.jpg" style="width:100%">
+	  <a href="apps\7C_MAP\index.html" target="_blank" style="white-space: normal;" class="w3-button w3-light-grey w3-padding-large w3-block"><b>The 7th Continent</b> <br><span class="w3-medium">Carte du continent</span></a>
+	</div>
+	<div class="w3-quarter w3-margin-bottom">
+	  <img src="images\ds2.jpg" style="width:100%">
+	  <a href="apps\DS2_DICE\index.html" target="_blank" style="white-space: normal;" class="w3-button w3-light-grey w3-padding-large w3-block"><b>Descent : Voyages dans les Ténèbres (Seconde Edition)</b> <br><span class="w3-medium">Lanceur de dés</span></a>
+	</div>
+	<div>
+	</div>
+</div>
 	
 	
 	
 </div>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
 
 </body>
 </html>
