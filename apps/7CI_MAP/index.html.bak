@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>7th continent map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="js/w3.js">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
+    <style>
+	img  {
+	  width:200px;
+	  height:200px;
+
+	}
+	#mydiv {
+	  position: absolute;
+	  z-index: 9;
+	  background-color: #f1f1f1;
+	  border: 1px solid #d3d3d3;
+	  text-align: center;
+	}
+
+	#mydivheader {
+	  padding: 10px;
+	  cursor: move;
+	  z-index: 10;
+	  color: #000;
+	}
+      td{
+        position:relative;
+        width:200px;
+	  		height:200px;
+        padding:0px;
+      }
+      img.icon{
+        position:absolute;
+      	width:30px;
+        height:30px;
+      }
+      .top {
+         top:0;
+      }
+      .bottom {
+      	bottom:0;
+      }
+      .left{
+      	left:0;
+      }
+      .left2{
+      	left:30px;
+      }
+      .left3{
+      	left:60px;
+      }
+      .right{
+      	right:0;
+      }
+      .right2{
+      	right:30px;
+      }
+      .right3{
+      	right:60px;
+      }
+      
+      
+</style> </head>
+  <body>
+    <div id="mydiv">
+      <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+      <div id="mydivheader">
+        <table style="border-collapse: collapse;" border="0">
+          <tbody>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/341.png"></td>
+              <td><img src="images/157.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/135.png"></td>
+              <td><img src="images/143.png"></td>
+              <td><img src="images/168.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/209.png"></td>
+              <td><br>
+              </td>
+              <td><img src="images/183.png"></td>
+              <td><img src="images/097.png"></td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td> <br>
+              </td>
+              <td> <br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/214.png"></td>
+              <td><img src="images/359.png"></td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td> <br>
+              </td>
+              <td> <img src="images/031.png"></td>
+              <td><img src="images/015.png"></td>
+              <td><img src="images/010.png"><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/239.png"></td>
+              <td><img src="images/194.png"></td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/019.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/379.png"></td>
+              <td><img src="images/279.png"></td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><img src="images/032.png"></td>
+              <td><img src="images/026.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/086.png"></td>
+              <td><img src="images/161.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/178.png"></td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/034.png"></td>
+              <td><img src="images/024.png"></td>
+              <td><img src="images/041.png"></td>
+              <td><img src="images/075.png"> </td>
+              <td><img src="images/094.png"></td>
+              <td><img src="images/090.png"></td>
+              <td><img src="images/119.png"></td>
+              <td><img src="images/128.png"></td>
+              <td><img src="images/079.png"></td>
+              <td><img src="images/191.png"></td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/081.png"> </td>
+              <td><img src="images/108.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/147.png"></td>
+              <td><img src="images/068.png"></td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/185.png"></td>
+              <td><img src="images/084.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/197.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+  </body>
+</html>
