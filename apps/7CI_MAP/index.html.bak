@@ -63,6 +63,45 @@
       	right:60px;
       }
       
+      .flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
       
 </style> </head>
   <body>
@@ -92,6 +131,14 @@
               </td>
               <td><br>
               </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -112,6 +159,14 @@
               <td><img src="images/135.png"></td>
               <td><img src="images/143.png"></td>
               <td><img src="images/168.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
               <td><br>
@@ -138,6 +193,13 @@
               </td>
               <td><img src="images/183.png"></td>
               <td><img src="images/097.png"></td>
+              <td><img src="images/142.png"> </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
             </tr>
@@ -152,8 +214,7 @@
               </td>
               <td><br>
               </td>
-              <td><br>
-              </td>
+              <td><img src="images/229.png"> </td>
               <td><br>
               </td>
               <td><br>
@@ -163,6 +224,14 @@
               </td>
               <td><img src="images/214.png"></td>
               <td><img src="images/359.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
             </tr>
@@ -182,6 +251,14 @@
               <td><img src="images/362.png"></td>
               <td><img src="images/239.png"></td>
               <td><img src="images/194.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
             </tr>
@@ -209,6 +286,13 @@
               <td><img src="images/279.png"></td>
               <td><br>
               </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/407.png"></td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -232,6 +316,10 @@
               <td><img src="images/178.png"></td>
               <td><br>
               </td>
+              <td><img src="images/340.png"></td>
+              <td><img src="images/176.png"></td>
+              <td><img src="images/245.png"></td>
+              <td><img src="images/391.png"></td>
             </tr>
             <tr>
               <td><br>
@@ -250,6 +338,12 @@
               <td><img src="images/128.png"></td>
               <td><img src="images/079.png"></td>
               <td><img src="images/191.png"></td>
+              <td><img src="images/269.png"></td>
+              <td><img src="images/296.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
             </tr>
             <tr>
               <td><br>
@@ -270,8 +364,34 @@
               </td>
               <td><br>
               </td>
-              <td><img src="images/147.png"></td>
-              <td><img src="images/068.png"></td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"> <img src="images/147.png" onclick="myFlip()">
+                    </div>
+                    <div class="flip-card-back">
+                      <h1>Lorem Ipsum</h1>
+                      <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"> <img src="images/068.png"> </div>
+                    <div class="flip-card-back">
+                      <h1>Lorem Ipsum</h1>
+                      <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><img src="images/238.png"> </td>
+              <td><img src="images/247.png"></td>
+              <td><img src="images/302.png"></td>
+              <td><br>
+              </td>
               <td><br>
               </td>
             </tr>
@@ -296,6 +416,12 @@
               </td>
               <td><br>
               </td>
+              <td><img src="images/167.png"> </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/333.png"></td>
               <td><br>
               </td>
               <td><br>
@@ -317,6 +443,81 @@
               <td><br>
               </td>
               <td><img src="images/197.png"></td>
+              <td><img src="images/096.png"> </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/216.png"> </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/137.png"></td>
+              <td><img src="images/145.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><img src="images/212.png"></td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
               <td><br>
               </td>
               <td><br>
@@ -374,7 +575,7 @@ function dragElement(elmnt) {
     /* stop moving when mouse button is released:*/
     document.onmouseup = null;
     document.onmousemove = null;
-  }
+  }  
 }
 </script>
   </body>
