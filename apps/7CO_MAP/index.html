@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>7th continent map</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/w3.css">
-		<link rel="stylesheet" href="js/w3.js">
-		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
-		<style>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>7th continent map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="js/w3.js">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
+    <style>
+	 body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Cache les barres de défilement */
+	}
 	img	{
 		width:200px;
 		height:200px;
@@ -31,7 +37,7 @@
 		cursor: pointer;
 	}
 	.highlight{
-		border: 10px solid;
+		border: 10px solid red;
 	}
 	td{
 		position:relative;
@@ -86,6 +92,9 @@
 	.flip-card:hover .flip-card-inner {
 		transform: rotateY(180deg);
 	}
+	.flip-card, .noflip:hover .flip-card-inner {
+		transform: none;
+	}
 
 	.flip-card-front, .flip-card-back {
 		position: absolute;
@@ -105,1431 +114,1881 @@
 		color: white;
 		transform: rotateY(180deg);
 	}
-	
+ 
+#navbar {
+	width: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   z-index: 3000;
+}
 </style> </head>
-	<body>
-		<div id="mydiv">
-			<!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-			<div id="mydivheader">
-				<table style="border-collapse: collapse;" border="0">
-					<tbody>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/459.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img class="icon bottom left" src="images/icy_maze.png"><img src="images/355.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/640.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/389.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/361.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/334.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/364.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/423.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/610.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/306.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/331.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/377.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/782.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/662.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img id="328" src="images/328.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/341.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/259.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img class="icon top right" src="images/lock2.png"><img src="images/290.png"></div>
-											<div class="flip-card-back"></div>
-										</div>
-									</div>
-								</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/346.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/773.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/635.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/618.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/302.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/319.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/252.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/214.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/198.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img class="icon top left" src="images/position1.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/760.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/442.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/659.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img class="icon top left" src="images/swamp_madness.png"><img src="images/258.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/262.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/304.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/203.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/220.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/264.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/271.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/288.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/382.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/368.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/426.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/664.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/390.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/284.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/281.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/161.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/123.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/191.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/313.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/365.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/396.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/416.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/446.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/184.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/397.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img class="icon bottom left" src="images/torch.png"><img src="images/622.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img class="icon topleft" src="images/voracious_goddess.png"><img src="images/218.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/208.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/205.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/163.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img id="143"  style="border-color: aqua;" src="images/143.png"></div>
-										<div class="flip-card-back">
-											<p>Porte : <img class="icon pointer" src="images/lock4.png" onclick="myHighlight(['143','196'])"></p>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/326.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/339.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/348.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/427.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/415.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/642.png"></div>
-										<div class="flip-card-back">
-											<p>Objet : <img class="icon" src="images/torch.png"></p>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/183.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img id="196" style="border-color: aqua;" src="images/196.png"></div>
-										<div class="flip-card-back">
-											<p>Objet : <img class="icon pointer" src="images/key4.png" onclick="myHighlight(['143','196'])"></p>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/154.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/253.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/402.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/418.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/374.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/338.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/387.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/654.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/609.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/602.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/179.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/140.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/122.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/142.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/043.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/321.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/641.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/628.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/112.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/086.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/059.png"></div>
-										<div class="flip-card-back">
-											<p>Objet : <img class="icon" src="images/key2.png"></p>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/066.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/136.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/111.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/083.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/044.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/072.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/054.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/132.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/131.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/094.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/312.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/038.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/175.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/120.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/088.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/125.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/056.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/149.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/241.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img id="007" style="border-color: dodgerblue;" src="images/007.png"></div>
-										<div class="flip-card-back">
-											<p>Objet : <img class="icon pointer" src="images/gearwheelB.png"  onclick="myHighlight(['014','007','017'])"></p>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img id="017" style="border-color: dodgerblue;" src="images/017.png"></div>
-										<div class="flip-card-back">
-											<p>Réparation : <img class="icon pointer" src="images/gearwheelA.png" onclick="myHighlight(['014','007','017'])"><img class="icon pointer" src="images/gearwheelB.png" onclick="myHighlight(['014','007','017'])"></p>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/015.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/009.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/010.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img id="014" style="border-color: dodgerblue;" src="images/014.png"></div>
-										<div class="flip-card-back">
-											<p>Objet : <img class="icon pointer" src="images/gearwheelA.png" onclick="myHighlight(['014','007','017'])"></p>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td> 
-								<div class="flip-card">
-									<div class="flip-card-inner">
-										<div class="flip-card-front"><img src="images/004.png"></div>
-										<div class="flip-card-back"></div>
-									</div>
-								</div>
-							</td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+  <body>
+  <div id="navbar" class="w3-dark-grey">
+  <div class="w3-bar w3-dark-grey">
+	  <a href="../../index.html" class="w3-bar-item w3-button">Home</a>
+	  <div class="w3-dropdown-hover">
+		<button class="w3-button">Malédictions</button>
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+		  <a href="#" class="w3-bar-item w3-button">Le Chant du Crystal</a> 
+		  <a href="javascript:scrollby([[218,284],4,9])" class="w3-bar-item w3-button">La Déesse Vorace</a> 
+		  <a href="#" class="w3-bar-item w3-button">L’offrande aux Gardiens</a> 
+		  <a href="#" class="w3-bar-item w3-button">Le labyrinthe de glace</a>
+		  <a href="#" class="w3-bar-item w3-button">Le coffret des Damnés</a> 
+		  <a href="#" class="w3-bar-item w3-button">Le sanctuaire interdit</a> 
+		  <a href="#" class="w3-bar-item w3-button">La traque sanguinaire</a> 
+		  <a href="#" class="w3-bar-item w3-button">Le marais de l’épouvante</a> 
+		  <a href="#" class="w3-bar-item w3-button">La prison des vents</a> 
+		  <a href="#" class="w3-bar-item w3-button">Un phare dans la nuit</a> 
+		  <a href="#" class="w3-bar-item w3-button">Les veines de la Terre</a>
+		  <a href="#" class="w3-bar-item w3-button">Armageddon</a>
 		</div>
-		<script>
+	  </div>
+	</div>
+  </div>
+    <div id="mydiv">
+      <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+      <div id="mydivheader">
+        <table style="border-collapse: collapse;" border="0">
+          <tbody>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/459.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/355.png"></div>
+                    <div class="flip-card-back">
+                      <p> <img class="icon bottom left" src="images/icy_maze.png">
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/640.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/389.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/361.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/334.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/364.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/423.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/610.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/306.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/331.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/377.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/782.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/662.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="328" src="images/328.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/341.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/259.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/290.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/346.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/773.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/635.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/618.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/302.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/319.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/252.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/214.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/198.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td> <br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/760.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/442.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/659.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/258.png"></div>
+                    <div class="flip-card-back">
+                      <p> <img class="icon top left" src="images/swamp_madness.png">
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/262.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/304.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/203.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/220.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/264.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="271" src="images/271.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/288.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/382.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/368.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/426.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/664.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/390.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="284" src="images/284.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/281.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/161.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/123.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/191.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/313.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/365.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/396.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/416.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/446.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/184.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/397.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/622.png"></div>
+                    <div class="flip-card-back">
+                      <p> <img class="icon bottom left" src="images/torch.png">
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="218" src="images/218.png"></div>
+                    <div class="flip-card-back">
+                      <p> <img class="icon topleft" src="images/voracious_goddess.png"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/208.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/205.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/163.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="143" src="images/143.png"></div>
+                    <div class="flip-card-back">
+                      <p>Porte : <img class="icon pointer" src="images/lock4.png" onclick="myHighlight(['143','196'])"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/326.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/339.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/348.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/427.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/415.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/642.png"></div>
+                    <div class="flip-card-back">
+                      <p>Objet : <img class="icon" src="images/torch.png"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/183.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="196" src="images/196.png"></div>
+                    <div class="flip-card-back">
+                      <p>Objet : <img class="icon pointer" src="images/key4.png" onclick="myHighlight(['143','196'])"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/154.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/253.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/402.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/418.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/374.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/338.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/387.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/654.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/609.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/602.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/179.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/140.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/122.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/142.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/043.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/321.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/641.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/628.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/112.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/086.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/059.png"></div>
+                    <div class="flip-card-back">
+                      <p>Objet : <img class="icon" src="images/key2.png"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/066.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/136.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/111.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/083.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/044.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/072.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/054.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/132.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/131.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/094.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/312.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/038.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/175.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/120.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/088.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/125.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/056.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/149.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/241.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="007" src="images/007.png"></div>
+                    <div class="flip-card-back">
+                      <p>Objet : <img class="icon pointer" src="images/gearwheelB.png" onclick="myHighlight(['014','007','017'])"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="017" src="images/017.png"></div>
+                    <div class="flip-card-back">
+                      <p>Réparation : <img class="icon pointer" src="images/gearwheelA.png" onclick="myHighlight(['014','007','017'])">
+					  <img class="icon pointer" src="images/gearwheelB.png" onclick="myHighlight(['014','007','017'])"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/015.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/009.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/010.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img id="014" src="images/014.png"></div>
+                    <div class="flip-card-back">
+                      <p>Objet : <img class="icon pointer" src="images/gearwheelA.png" onclick="myHighlight(['014','007','017'])"></p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="flip-card noflip">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/004.png"></div>
+                    <div class="flip-card-back"></div>
+                  </div>
+                </div>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+              <td><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
 //Make the DIV element draggagle:
 dragElement(document.getElementById("mydiv"));
 
@@ -1580,6 +2039,30 @@ function myHighlight(elements){
 function highlight(e){
 	document.getElementById(e).classList.toggle("highlight");
 }
-</script>
-	</body>
+function scrollby(card){
+
+	let num = card[0];
+	let col = card[1];
+	let line = card[2];
+	
+	if(col!=0){
+		col=col-1;
+	}
+	if(line!=0){
+		line=line-1;
+	}
+	let height = window.innerHeight;
+	let width = window.innerWidth;
+	
+	document.getElementById("mydiv").style.top = (height/2)-110-(line*200)+"px";
+	document.getElementById("mydiv").style.left = (width/2)-110-(col*200)+"px";
+	
+	myHighlight(num);
+	
+}
+
+function check(){
+
+}
+</script> </body>
 </html>
